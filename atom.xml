@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-26T07:36:18.336Z</updated>
+  <updated>2017-07-26T07:57:40.779Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,17 +20,17 @@
     <link href="http://yoursite.com/2017/07/26/windows%E4%B8%8B%E7%94%A8cmd%E5%91%BD%E4%BB%A4netstat%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E7%AB%AF%E5%8F%A3%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5/"/>
     <id>http://yoursite.com/2017/07/26/windows下用cmd命令netstat查看系统端口使用情况/</id>
     <published>2017-07-26T07:19:33.000Z</published>
-    <updated>2017-07-26T07:36:18.336Z</updated>
+    <updated>2017-07-26T07:57:40.779Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="大家可以在cmd窗口执行"><a href="#大家可以在cmd窗口执行" class="headerlink" title="==大家可以在cmd窗口执行=="></a>==大家可以在cmd窗口执行==</h3><p><img src="./01.png" alt="这里可以看到所有参数"></p>
-<h3 id="查看一个端口被哪个进程占用，然后杀掉他"><a href="#查看一个端口被哪个进程占用，然后杀掉他" class="headerlink" title="==查看一个端口被哪个进程占用，然后杀掉他=="></a>==查看一个端口被哪个进程占用，然后杀掉他==</h3><p><img src="./02.png" alt="杀死进程"></p>
-<h3 id="查看任务管理器"><a href="#查看任务管理器" class="headerlink" title="==查看任务管理器=="></a>==查看任务管理器==</h3><p><img src="./03.png" alt="任务管理器列表"></p>
-<h3 id="用pid查找程序"><a href="#用pid查找程序" class="headerlink" title="==用pid查找程序=="></a>==用pid查找程序==</h3><p><img src="./04.png" alt="查找程序"></p>
+    <content type="html"><![CDATA[<h3 id="大家可以在cmd窗口执行"><a href="#大家可以在cmd窗口执行" class="headerlink" title="大家可以在cmd窗口执行"></a><table><tr><td bgcolor="PowderBlue">大家可以在cmd窗口执行</td></tr></table></h3><p><img src="/images/01.png" alt="这里可以看到所有参数"></p>
+<h3 id="查看一个端口被哪个进程占用，然后杀掉他"><a href="#查看一个端口被哪个进程占用，然后杀掉他" class="headerlink" title="查看一个端口被哪个进程占用，然后杀掉他"></a><table><tr><td bgcolor="PowderBlue">查看一个端口被哪个进程占用，然后杀掉他</td></tr></table></h3><p><img src="/images/02.png" alt="杀死进程"></p>
+<h3 id="查看任务管理器"><a href="#查看任务管理器" class="headerlink" title="查看任务管理器"></a><table><tr><td bgcolor="PowderBlue">查看任务管理器</td></tr></table></h3><p><img src="/images/03.png" alt="任务管理器列表"></p>
+<h3 id="用pid查找程序"><a href="#用pid查找程序" class="headerlink" title="用pid查找程序"></a><table><tr><td bgcolor="PowderBlue">用pid查找程序</td></tr></table></h3><p><img src="/images/04.png" alt="查找程序"></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;大家可以在cmd窗口执行&quot;&gt;&lt;a href=&quot;#大家可以在cmd窗口执行&quot; class=&quot;headerlink&quot; title=&quot;==大家可以在cmd窗口执行==&quot;&gt;&lt;/a&gt;==大家可以在cmd窗口执行==&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;./01.png&quot; al
+      &lt;h3 id=&quot;大家可以在cmd窗口执行&quot;&gt;&lt;a href=&quot;#大家可以在cmd窗口执行&quot; class=&quot;headerlink&quot; title=&quot;大家可以在cmd窗口执行&quot;&gt;&lt;/a&gt;&lt;table&gt;&lt;tr&gt;&lt;td bgcolor=&quot;PowderBlue&quot;&gt;大家可以在cmd窗口执行&lt;/
     
     </summary>
     
