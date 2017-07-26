@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-26T10:18:12.693Z</updated>
+  <updated>2017-07-26T13:34:53.937Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo+github搭建博客流程</title>
+    <link href="http://yoursite.com/2017/07/26/hexo-github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%B5%81%E7%A8%8B/"/>
+    <id>http://yoursite.com/2017/07/26/hexo-github搭建博客流程/</id>
+    <published>2017-07-26T13:19:58.000Z</published>
+    <updated>2017-07-26T13:34:53.937Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p><a href="http://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html" target="_blank" rel="external">小茗同学的博客园</a></p>
+<h2 id="NexT主题配置"><a href="#NexT主题配置" class="headerlink" title="NexT主题配置"></a>NexT主题配置</h2><p><a href="https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud" target="_blank" rel="external">为NexT主题添加文章阅读量统计功能</a></p>
+<p><a href="http://www.jianshu.com/p/ba61be039c1f" target="_blank" rel="external">hexo之next主题优化整理</a></p>
+<p><a href="http://www.jeyzhang.com/next-theme-personal-settings.html" target="_blank" rel="external">hexo next主题配置</a></p>
+<p><a href="https://segmentfault.com/a/1190000009595779" target="_blank" rel="external">Hexo-next主题个性化配置</a>(细节多)</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;环境配置&quot;&gt;&lt;a href=&quot;#环境配置&quot; class=&quot;headerlink&quot; title=&quot;环境配置&quot;&gt;&lt;/a&gt;环境配置&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/liuxianan/p/build-blog-website
+    
+    </summary>
+    
+      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+      <category term="gihub" scheme="http://yoursite.com/tags/gihub/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo部署到github遇到的坑</title>

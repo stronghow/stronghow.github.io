@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[hexo+github搭建博客流程]]></title>
+    <url>%2F2017%2F07%2F26%2Fhexo-github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%B5%81%E7%A8%8B%2F</url>
+    <content type="text"><![CDATA[环境配置小茗同学的博客园 NexT主题配置为NexT主题添加文章阅读量统计功能 hexo之next主题优化整理 hexo next主题配置 Hexo-next主题个性化配置(细节多)]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>gihub</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[hexo部署到github遇到的坑]]></title>
     <url>%2F2017%2F07%2F26%2Fhexo%E9%83%A8%E7%BD%B2%E5%88%B0github%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%2F</url>
     <content type="text"><![CDATA[1. 部署到github无法存储图片解决： 注册七牛云 &rarr; 新建存储空间（对象存储） &rarr; 上传图片工具进行图片上传到七牛云 &rarr; 获取外链 2. markdown无法满足需求解决：直接写html]]></content>
