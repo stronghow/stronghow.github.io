@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-26T09:08:10.426Z</updated>
+  <updated>2017-07-26T09:42:10.090Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,42 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>hexo部署到github遇到的坑</title>
+    <link href="http://yoursite.com/2017/07/26/hexo%E9%83%A8%E7%BD%B2%E5%88%B0github%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91/"/>
+    <id>http://yoursite.com/2017/07/26/hexo部署到github遇到的坑/</id>
+    <published>2017-07-26T09:15:01.000Z</published>
+    <updated>2017-07-26T09:42:10.090Z</updated>
+    
+    <content type="html"><![CDATA[<ol>
+<li>部署到github无法存储图片<br><strong>解决</strong>： 注册<a href="https://portal.qiniu.com" target="_blank" rel="external">七牛云 </a>  &rarr; 新建存储空间<br>（对象存储） &rarr; <a href="https://github.com/qiniu/QSunSync" target="_blank" rel="external">上传图片工具</a>进行图片上传到七牛云 &rarr; 获取外链 <img src="http://otowics47.bkt.clouddn.com/06.PNG" alt="获取外链"></li>
+</ol>
+<ol>
+<li>markdown无法满足需求<br><strong>解决</strong>：直接写html<img src="http://otowics47.bkt.clouddn.com/05.PNG" alt="html"></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;部署到github无法存储图片&lt;br&gt;&lt;strong&gt;解决&lt;/strong&gt;： 注册&lt;a href=&quot;https://portal.qiniu.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;七牛云 &lt;/a&gt;  &amp;rarr; 新建存储空间
+    
+    </summary>
+    
+      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+      <category term="github pages" scheme="http://yoursite.com/tags/github-pages/"/>
+    
+  </entry>
+  
+  <entry>
     <title>windows下用cmd命令netstat查看系统端口使用情况</title>
     <link href="http://yoursite.com/2017/07/26/windows%E4%B8%8B%E7%94%A8cmd%E5%91%BD%E4%BB%A4netstat%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E7%AB%AF%E5%8F%A3%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5/"/>
     <id>http://yoursite.com/2017/07/26/windows下用cmd命令netstat查看系统端口使用情况/</id>
     <published>2017-07-26T07:19:33.000Z</published>
-    <updated>2017-07-26T09:08:10.426Z</updated>
+    <updated>2017-07-26T09:43:55.370Z</updated>
     
     <content type="html"><![CDATA[<h3 id="大家可以在cmd窗口执行"><a href="#大家可以在cmd窗口执行" class="headerlink" title="大家可以在cmd窗口执行"></a><table><tr><td bgcolor="PowderBlue">大家可以在cmd窗口执行</td></tr></table></h3><p><img src="http://otowics47.bkt.clouddn.com/01.PNG" alt="这里可以看到所有参数"></p>
 <h3 id="查看一个端口被哪个进程占用，然后杀掉他"><a href="#查看一个端口被哪个进程占用，然后杀掉他" class="headerlink" title="查看一个端口被哪个进程占用，然后杀掉他"></a><table><tr><td bgcolor="PowderBlue">查看一个端口被哪个进程占用，然后杀掉他</td></tr></table></h3><p><img src="http://otowics47.bkt.clouddn.com/02.PNG" alt="杀死进程"></p>
@@ -34,6 +65,10 @@
     
     </summary>
     
+      <category term="windows" scheme="http://yoursite.com/categories/windows/"/>
+    
+    
+      <category term="cmd" scheme="http://yoursite.com/tags/cmd/"/>
     
   </entry>
   
