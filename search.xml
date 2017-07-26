@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[hexo部署到github遇到的坑]]></title>
     <url>%2F2017%2F07%2F26%2Fhexo%E9%83%A8%E7%BD%B2%E5%88%B0github%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%2F</url>
-    <content type="text"><![CDATA[部署到github无法存储图片解决： 注册七牛云 &rarr; 新建存储空间（对象存储） &rarr; 上传图片工具进行图片上传到七牛云 &rarr; 获取外链 markdown无法满足需求解决：直接写html]]></content>
+    <content type="text"><![CDATA[1. 部署到github无法存储图片解决： 注册七牛云 &rarr; 新建存储空间（对象存储） &rarr; 上传图片工具进行图片上传到七牛云 &rarr; 获取外链 2. markdown无法满足需求解决：直接写html]]></content>
       <categories>
         <category>hexo</category>
       </categories>
