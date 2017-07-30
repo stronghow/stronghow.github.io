@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-26T13:34:53.937Z</updated>
+  <updated>2017-07-30T13:56:00.137Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mysql数据库的导入导出</title>
+    <link href="http://yoursite.com/2017/07/30/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/"/>
+    <id>http://yoursite.com/2017/07/30/mysql数据库的导入导出/</id>
+    <published>2017-07-30T13:33:33.000Z</published>
+    <updated>2017-07-30T13:56:00.137Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="导出数据库"><a href="#导出数据库" class="headerlink" title="导出数据库"></a>导出数据库</h1><h3 id="最常用导出数据库"><a href="#最常用导出数据库" class="headerlink" title="最常用导出数据库"></a>最常用导出数据库</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqldump -u用户名 -<span class="selector-tag">p</span> 数据库名&gt;保存路径\xx.sql</div></pre></td></tr></table></figure>
+<h5 id="注意：此备份只备份数据和数据结构，没有备份存储过程和触发器"><a href="#注意：此备份只备份数据和数据结构，没有备份存储过程和触发器" class="headerlink" title="注意：此备份只备份数据和数据结构，没有备份存储过程和触发器"></a>注意：此备份只备份数据和数据结构，没有备份存储过程和触发器</h5><p><img src="http://otowics47.bkt.clouddn.com/07.PNG" alt="cmd操作"></p>
+<h3 id="导出所有数据库"><a href="#导出所有数据库" class="headerlink" title="导出所有数据库"></a>导出所有数据库</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqldump -u用户名 -<span class="selector-tag">p</span> -a&gt;保存路径\xx.sql</div></pre></td></tr></table></figure>
+<h3 id="只导出数据不导出数据结构"><a href="#只导出数据不导出数据结构" class="headerlink" title="只导出数据不导出数据结构"></a>只导出数据不导出数据结构</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqldump -u用户名 -<span class="selector-tag">p</span> -t数据库名&gt;保存路径\xx.sql</div></pre></td></tr></table></figure>
+<h3 id="导出数据库中的触发器（Events）"><a href="#导出数据库中的触发器（Events）" class="headerlink" title="导出数据库中的触发器（Events）"></a>导出数据库中的触发器（Events）</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqldump -u用户名 -<span class="selector-tag">p</span> -e数据库名&gt;保存路径\xx.sql</div></pre></td></tr></table></figure>
+<h3 id="导出数据库中的存储过程和函数"><a href="#导出数据库中的存储过程和函数" class="headerlink" title="导出数据库中的存储过程和函数"></a>导出数据库中的存储过程和函数</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqldump -u用户名 -<span class="selector-tag">p</span> -r数据库名&gt;保存路径\xx.sql</div></pre></td></tr></table></figure>
+<h1 id="导入数据库"><a href="#导入数据库" class="headerlink" title="导入数据库"></a>导入数据库</h1><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u用户名 -<span class="selector-tag">p</span> 数据库名&lt;备份路径\xx.sql</div></pre></td></tr></table></figure>
+<p><img src="http://otowics47.bkt.clouddn.com/08.PNG" alt="cmd操作"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;导出数据库&quot;&gt;&lt;a href=&quot;#导出数据库&quot; class=&quot;headerlink&quot; title=&quot;导出数据库&quot;&gt;&lt;/a&gt;导出数据库&lt;/h1&gt;&lt;h3 id=&quot;最常用导出数据库&quot;&gt;&lt;a href=&quot;#最常用导出数据库&quot; class=&quot;headerlink&quot; titl
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="cmd" scheme="http://yoursite.com/tags/cmd/"/>
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo+github搭建博客流程</title>

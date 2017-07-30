@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[mysql数据库的导入导出]]></title>
+    <url>%2F2017%2F07%2F30%2Fmysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA%2F</url>
+    <content type="text"><![CDATA[导出数据库最常用导出数据库1mysqldump -u用户名 -p 数据库名&gt;保存路径\xx.sql 注意：此备份只备份数据和数据结构，没有备份存储过程和触发器 导出所有数据库1mysqldump -u用户名 -p -a&gt;保存路径\xx.sql 只导出数据不导出数据结构1mysqldump -u用户名 -p -t数据库名&gt;保存路径\xx.sql 导出数据库中的触发器（Events）1mysqldump -u用户名 -p -e数据库名&gt;保存路径\xx.sql 导出数据库中的存储过程和函数1mysqldump -u用户名 -p -r数据库名&gt;保存路径\xx.sql 导入数据库1mysql -u用户名 -p 数据库名&lt;备份路径\xx.sql]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>cmd</tag>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[hexo+github搭建博客流程]]></title>
     <url>%2F2017%2F07%2F26%2Fhexo-github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%B5%81%E7%A8%8B%2F</url>
     <content type="text"><![CDATA[环境配置小茗同学的博客园 NexT主题配置为NexT主题添加文章阅读量统计功能 hexo之next主题优化整理 hexo next主题配置 Hexo-next主题个性化配置(细节多)]]></content>
