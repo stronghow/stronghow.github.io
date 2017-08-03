@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Android_Studio主题配置]]></title>
+    <url>%2F2017%2F08%2F02%2FAndroid-Studio%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Android_Studio从Git上Clone项目]]></title>
+    <url>%2F2017%2F08%2F02%2FAndroid-Studio%E4%BB%8EGit%E4%B8%8AClone%E9%A1%B9%E7%9B%AE%2F</url>
+    <content type="text"><![CDATA[在Android Studio中设置Git打开 File &rarr; setting, 得到如下图： 打开File &rarr; New &rarr; Project from Version Control &rarr; Git,弹出界面如下图：]]></content>
+      <categories>
+        <category>Android_studio</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[mysql数据库的导入导出]]></title>
     <url>%2F2017%2F07%2F30%2Fmysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA%2F</url>
     <content type="text"><![CDATA[导出数据库最常用导出数据库1mysqldump -u用户名 -p 数据库名&gt;保存路径\xx.sql 注意：此备份只备份数据和数据结构，没有备份存储过程和触发器 导出所有数据库1mysqldump -u用户名 -p -a&gt;保存路径\xx.sql 只导出数据不导出数据结构1mysqldump -u用户名 -p -t数据库名&gt;保存路径\xx.sql 导出数据库中的触发器（Events）1mysqldump -u用户名 -p -e数据库名&gt;保存路径\xx.sql 导出数据库中的存储过程和函数1mysqldump -u用户名 -p -r数据库名&gt;保存路径\xx.sql 导入数据库1mysql -u用户名 -p 数据库名&lt;备份路径\xx.sql]]></content>
@@ -8,8 +24,8 @@
         <category>数据库</category>
       </categories>
       <tags>
-        <tag>cmd</tag>
         <tag>mysql</tag>
+        <tag>cmd</tag>
       </tags>
   </entry>
   <entry>
