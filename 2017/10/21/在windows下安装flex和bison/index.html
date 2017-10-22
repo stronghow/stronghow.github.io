@@ -1,28 +1,372 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>博客</title>
+<!DOCTYPE html>
+
+
+
   
-  <link href="/atom.xml" rel="self"/>
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-  <link href="http://yoursite.com/"/>
-  <updated>2017-10-22T12:20:00.345Z</updated>
-  <id>http://yoursite.com/</id>
   
-  <author>
-    <name>Stronghow</name>
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
     
-  </author>
-  
-  <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>在windows下安装flex和bison</title>
-    <link href="http://yoursite.com/2017/10/21/%E5%9C%A8windows%E4%B8%8B%E5%AE%89%E8%A3%85flex%E5%92%8Cbison/"/>
-    <id>http://yoursite.com/2017/10/21/在windows下安装flex和bison/</id>
-    <published>2017-10-21T13:29:29.000Z</published>
-    <updated>2017-10-22T12:20:00.345Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="词法分析器"><a href="#词法分析器" class="headerlink" title="词法分析器"></a>词法分析器</h3><p>LEX是UNIX的工具，因此我们需要使用FLEX代替,使得在windows下使用；<br>配对：<br>LEX和YACC<br>FLEX和BISON<br>JFLEX和JavaCUP</p>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="词法分析器,flex,bison," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="词法分析器LEX是UNIX的工具，因此我们需要使用FLEX代替,使得在windows下使用；配对：LEX和YACCFLEX和BISONJFLEX和JavaCUP 下载得网址:flexbison 最偷懒得方法就是直接下载 Complete package, except sources打开右键我得电脑→属性→內容→高级→环境变量→系统变量→path→编辑加入;C:\Program Files(x86">
+<meta name="keywords" content="词法分析器,flex,bison">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在windows下安装flex和bison">
+<meta property="og:url" content="http://yoursite.com/2017/10/21/在windows下安装flex和bison/index.html">
+<meta property="og:site_name" content="博客">
+<meta property="og:description" content="词法分析器LEX是UNIX的工具，因此我们需要使用FLEX代替,使得在windows下使用；配对：LEX和YACCFLEX和BISONJFLEX和JavaCUP 下载得网址:flexbison 最偷懒得方法就是直接下载 Complete package, except sources打开右键我得电脑→属性→內容→高级→环境变量→系统变量→path→编辑加入;C:\Program Files(x86">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-22T12:20:00.345Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在windows下安装flex和bison">
+<meta name="twitter:description" content="词法分析器LEX是UNIX的工具，因此我们需要使用FLEX代替,使得在windows下使用；配对：LEX和YACCFLEX和BISONJFLEX和JavaCUP 下载得网址:flexbison 最偷懒得方法就是直接下载 Complete package, except sources打开右键我得电脑→属性→內容→高级→环境变量→系统变量→path→编辑加入;C:\Program Files(x86">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/21/在windows下安装flex和bison/"/>
+
+
+
+
+
+  <title>在windows下安装flex和bison | 博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/21/在windows下安装flex和bison/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Stronghow">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">在windows下安装flex和bison</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-21T21:29:29+08:00">
+                2017-10-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编译原理/" itemprop="url" rel="index">
+                    <span itemprop="name">编译原理</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/10/21/在windows下安装flex和bison/" class="leancloud_visitors" data-flag-title="在windows下安装flex和bison">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="词法分析器"><a href="#词法分析器" class="headerlink" title="词法分析器"></a>词法分析器</h3><p>LEX是UNIX的工具，因此我们需要使用FLEX代替,使得在windows下使用；<br>配对：<br>LEX和YACC<br>FLEX和BISON<br>JFLEX和JavaCUP</p>
 <h3 id="下载得网址"><a href="#下载得网址" class="headerlink" title="下载得网址:"></a>下载得网址:</h3><p><a href="http://gnuwin32.sourceforge.net/packages/flex.htm" target="_blank" rel="external">flex</a><br><a href="http://gnuwin32.sourceforge.net/packages/bison.htm" target="_blank" rel="external">bison</a><br> 最偷懒得方法就是直接下载 Complete package, except sources<br>打开右键我得电脑→属性→內容→高级→环境变量→系统变量→path→编辑<br>加入;C:\Program Files(x86)\GnuWin32\bin;<br>cmd<br>键入<br>flex -V<br>bison -V<br>这样就能看到正确得信息就表示安装成功了！！</p>
 <h3 id="使用flex"><a href="#使用flex" class="headerlink" title="使用flex"></a>使用flex</h3><h4 id="步骤一："><a href="#步骤一：" class="headerlink" title="步骤一："></a>步骤一：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">%&#123;  </div><div class="line">	//声明一些变量或函数  </div><div class="line">%&#125;  </div><div class="line">//定义正则表达式  </div><div class="line">//比如:  </div><div class="line">//num ([0-9])+   //左边为符号，右边为正则表达式  </div><div class="line">%%  </div><div class="line">//定义一系列的动作，即如果匹配了上面定义的某个正则表达式之后的动作,此动作是C语言的语句  </div><div class="line">//比如：  </div><div class="line">//&#123;num&#125; &#123;printf(&quot;num&quot;);&#125; //左边为&#123;模式&#125;,右边为&#123;C语句&#125;;  </div><div class="line">%%  </div><div class="line">void main() //执行主函数  </div><div class="line">&#123;  </div><div class="line">    yylex(); </div><div class="line">	//开始解析语句,内置函数  </div><div class="line">    //定义C语言语句  </div><div class="line">&#125;  </div><div class="line">int yywrap()  </div><div class="line">&#123;  </div><div class="line">    return 1;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h5 id="示列（name-l）"><a href="#示列（name-l）" class="headerlink" title="示列（name.l）"></a>示列（name.l）</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div></pre></td><td class="code"><pre><div class="line">%&#123;</div><div class="line">#include &quot;stdio.h&quot;</div><div class="line">#include &quot;stdlib.h&quot;</div><div class="line">%&#125;</div><div class="line"></div><div class="line"></div><div class="line">/*标识符*/</div><div class="line">id [a-zA-Z_][a-zA-Z_0-9]*</div><div class="line"></div><div class="line">/*常量*/</div><div class="line">num ([1-9][0-9]*|[0])|([0][Xx]([1-9][0-9]*|[0]))|([0][0-7])|([0-9]*[.][0-9]+([eE][+-]?[0-9]*|[0])?f?)	</div><div class="line">ch	\&apos;([^&apos;])&#123;1&#125;\&apos;</div><div class="line">str	\&quot;(\\.|[^&quot;\\])*\&quot;</div><div class="line"></div><div class="line">/*关键字*/</div><div class="line">kw_int		int</div><div class="line">kw_float    float</div><div class="line">kw_double	double</div><div class="line">kw_char		char</div><div class="line">kw_void		void</div><div class="line">kw_if		if</div><div class="line">kw_then		then</div><div class="line">kw_else		else</div><div class="line">kw_switch	switch</div><div class="line">kw_case		case</div><div class="line">kw_default	default</div><div class="line">kw_while	while</div><div class="line">kw_do		do</div><div class="line">kw_for		for</div><div class="line">kw_break	break</div><div class="line">kw_continue	continue</div><div class="line">kw_return	return</div><div class="line"></div><div class="line">/*运算符*/</div><div class="line">add	[+]</div><div class="line">sub	[-]</div><div class="line">mul	[*]</div><div class="line">div	[/]</div><div class="line">mod	[%]</div><div class="line">inc	[+][+]</div><div class="line">dec	[-][-]</div><div class="line">not	[!]</div><div class="line">and	[&amp;][&amp;]</div><div class="line">or	[|][|]</div><div class="line">assign	[=]</div><div class="line">gt	[&gt;]</div><div class="line">ge	[&gt;][=]</div><div class="line">lt	[&lt;]</div><div class="line">le	[&lt;][=]</div><div class="line">equ	[=][=]</div><div class="line">nequ   [!][=]</div><div class="line"></div><div class="line">/*分解符*/</div><div class="line">comma	 [,]</div><div class="line">colon	 [:]</div><div class="line">simcon	 [;]</div><div class="line">lparen	 \(</div><div class="line">rparen	 \)</div><div class="line">lbracket \[</div><div class="line">rbracket \]</div><div class="line">lbrac	 \&#123;</div><div class="line">rbrac	 \&#125;</div><div class="line"></div><div class="line">%%</div><div class="line"></div><div class="line">&#123;kw_int&#125; |</div><div class="line">&#123;kw_float&#125; |</div><div class="line">&#123;kw_double&#125; |</div><div class="line">&#123;kw_char&#125; |</div><div class="line">&#123;kw_void&#125; |</div><div class="line">&#123;kw_if&#125; |</div><div class="line">&#123;kw_then&#125; |</div><div class="line">&#123;kw_else&#125; |</div><div class="line">&#123;kw_switch&#125; |</div><div class="line">&#123;kw_case&#125; |</div><div class="line">&#123;kw_default&#125; |</div><div class="line">&#123;kw_while&#125; |</div><div class="line">&#123;kw_do&#125; |</div><div class="line">&#123;kw_for&#125; |</div><div class="line">&#123;kw_break&#125; |</div><div class="line">&#123;kw_continue&#125; |</div><div class="line">&#123;kw_return&#125; &#123;</div><div class="line">	printf(&quot;&lt;kw_%s, %s&gt;\n&quot;, yytext, yytext);</div><div class="line">&#125;</div><div class="line"></div><div class="line">&#123;ch&#125; &#123;</div><div class="line">   printf(&quot;&lt;ch, %s&gt;\n&quot;, yytext);</div><div class="line">&#125;</div><div class="line">&#123;str&#125; &#123;</div><div class="line">   printf(&quot;&lt;str, %s&gt;\n&quot;, yytext);</div><div class="line">&#125;</div><div class="line"></div><div class="line">&#123;id&#125; &#123;</div><div class="line">   printf(&quot;&lt;id, %s&gt;\n&quot;, yytext);</div><div class="line">&#125;</div><div class="line"></div><div class="line">&#123;num&#125; &#123;</div><div class="line">   printf(&quot;&lt;num, %s&gt;\n&quot;, yytext);</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">&#123;add&#125; &#123;</div><div class="line">   printf(&quot;&lt;add, %s&gt;\n&quot;, yytext);</div><div class="line">&#125;</div><div class="line">&#123;sub&#125; &#123;</div><div class="line">   printf(&quot;&lt;sub, %s&gt;\n&quot;, yytext);</div><div class="line">&#125;</div><div class="line">&#123;mul&#125; &#123;</div><div class="line">   printf(&quot;&lt;mul, %s&gt;\n&quot;, yytext);</div><div class="line">&#125;</div><div class="line">&#123;div&#125; &#123;</div><div class="line">   printf(&quot;&lt;div, %s&gt;\n&quot;, yytext);</div><div class="line">&#125;</div><div class="line">&#123;mod&#125; &#123;</div><div class="line">   printf(&quot;&lt;mod, %s&gt;\n&quot;, yytext);</div><div class="line">&#125;</div><div class="line">&#123;inc&#125; &#123;</div><div class="line">   printf(&quot;&lt;inc, %s&gt;\n&quot;, yytext);</div><div class="line">&#125;</div><div class="line">&#123;dec&#125; &#123;</div><div class="line">   printf(&quot;&lt;dec, %s&gt;\n&quot;, yytext);</div><div class="line">&#125;</div><div class="line">&#123;not&#125; &#123;</div><div class="line">   printf(&quot;&lt;not, %s&gt;\n&quot;, yytext);</div><div class="line">&#125;</div><div class="line">&#123;and&#125; &#123;</div><div class="line">   printf(&quot;&lt;and, %s&gt;\n&quot;, yytext);</div><div class="line">&#125;</div><div class="line">&#123;or&#125; &#123;</div><div class="line">   printf(&quot;&lt;or, %s&gt;\n&quot;, yytext);</div><div class="line">&#125;</div><div class="line">&#123;assign&#125; &#123;</div><div class="line">   printf(&quot;&lt;assign, %s&gt;\n&quot;, yytext);</div><div class="line">&#125;</div><div class="line">&#123;gt&#125; &#123;</div><div class="line">   printf(&quot;&lt;gt, %s&gt;\n&quot;, yytext);</div><div class="line">&#125;</div><div class="line">&#123;ge&#125; &#123;</div><div class="line">   printf(&quot;&lt;ge, %s&gt;\n&quot;, yytext);</div><div class="line">&#125;</div><div class="line">&#123;lt&#125; &#123;</div><div class="line">   printf(&quot;&lt;lt, %s&gt;\n&quot;, yytext);</div><div class="line">&#125;</div><div class="line">&#123;le&#125; &#123;</div><div class="line">   printf(&quot;&lt;le, %s&gt;\n&quot;, yytext);</div><div class="line">&#125;</div><div class="line">&#123;equ&#125; &#123;</div><div class="line">   printf(&quot;&lt;equ, %s&gt;\n&quot;, yytext);</div><div class="line">&#125;</div><div class="line">&#123;nequ&#125; &#123;</div><div class="line">   printf(&quot;&lt;nequ, %s&gt;\n&quot;, yytext);</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">&#123;comma&#125; &#123;</div><div class="line">   printf(&quot;&lt;comma, %s&gt;\n&quot;, yytext);</div><div class="line">&#125;</div><div class="line">&#123;colon&#125; &#123;</div><div class="line">   printf(&quot;&lt;colon, %s&gt;\n&quot;, yytext);</div><div class="line">&#125;</div><div class="line">&#123;simcon&#125; &#123;</div><div class="line">   printf(&quot;&lt;simcon, %s&gt;\n&quot;, yytext);</div><div class="line">&#125;</div><div class="line">&#123;lparen&#125; &#123;</div><div class="line">   printf(&quot;&lt;lparen, %s&gt;\n&quot;, yytext);</div><div class="line">&#125;</div><div class="line">&#123;rparen&#125; &#123;</div><div class="line">   printf(&quot;&lt;rparen, %s&gt;\n&quot;, yytext);</div><div class="line">&#125;</div><div class="line">&#123;lbracket&#125; &#123;</div><div class="line">   printf(&quot;&lt;lbracket, %s&gt;\n&quot;, yytext);</div><div class="line">&#125;</div><div class="line">&#123;rbracket&#125; &#123;</div><div class="line">   printf(&quot;&lt;rbracket, %s&gt;\n&quot;, yytext);</div><div class="line">&#125;</div><div class="line">&#123;lbrac&#125; &#123;</div><div class="line">   printf(&quot;&lt;lbrac, %s&gt;\n&quot;, yytext);</div><div class="line">&#125;</div><div class="line">&#123;rbrac&#125; &#123;</div><div class="line">   printf(&quot;&lt;rbrac, %s&gt;\n&quot;, yytext);</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">%%</div><div class="line">int yywrap() &#123;</div><div class="line">  return 1;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main(int argc, char** argv) &#123;</div><div class="line">   if (argc &gt; 1) &#123;</div><div class="line">       if (!(yyin = fopen(argv[1], &quot;r&quot;))) &#123;   </div><div class="line">           perror(argv[1]);</div><div class="line">           return 1;</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line">   while (yylex());</div><div class="line">   return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -31,243 +375,491 @@
 <h5 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">&lt;kw_int, int&gt;</div><div class="line"> &lt;kw_float, float&gt;</div><div class="line"> &lt;lbrac, &#123;&gt;</div><div class="line">&lt;rbrac, &#125;&gt;</div><div class="line">&lt;lparen, (&gt;</div><div class="line">&lt;rparen, )&gt;</div><div class="line">&lt;lbracket, [&gt;</div><div class="line">&lt;rbracket, ]&gt;</div><div class="line"> &lt;num, 0&gt;</div><div class="line"></div><div class="line">&lt;num, 0x0&gt;</div><div class="line"> &lt;num, 0x123&gt;</div><div class="line"></div><div class="line">&lt;num, 123.5&gt;</div><div class="line"></div><div class="line">&lt;num, .3e-10f&gt;</div><div class="line"></div><div class="line">&lt;assign, =&gt;</div><div class="line"> &lt;ge, &gt;=&gt;</div><div class="line"> &lt;or, ||&gt;</div><div class="line"> &lt;and, &amp;&amp;&gt;</div><div class="line"> &lt;not, !&gt;</div><div class="line"> &lt;simcon, ;&gt;</div><div class="line"> &lt;comma, ,&gt;</div><div class="line"></div><div class="line">&lt;id, this_is_an_id&gt;</div><div class="line"></div><div class="line">&lt;id, id123&gt;</div><div class="line"></div><div class="line">&lt;kw_if, if&gt;</div><div class="line"> &lt;kw_then, then&gt;</div><div class="line"> &lt;kw_else, else&gt;</div><div class="line"></div><div class="line">&lt;ch, &apos;f&apos;&gt;</div><div class="line"></div><div class="line">&lt;str, &quot;bfgg&quot;&gt;</div></pre></td></tr></table></figure>
 <h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>rule组合使用同一函数时必须放最前面，否则报错<br>即此段代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&#123;kw_int&#125; |</div><div class="line">&#123;kw_float&#125; |</div><div class="line">&#123;kw_double&#125; |</div><div class="line">&#123;kw_char&#125; |</div><div class="line">&#123;kw_void&#125; |</div><div class="line">&#123;kw_if&#125; |</div><div class="line">&#123;kw_then&#125; |</div><div class="line">&#123;kw_else&#125; |</div><div class="line">&#123;kw_switch&#125; |</div><div class="line">&#123;kw_case&#125; |</div><div class="line">&#123;kw_default&#125; |</div><div class="line">&#123;kw_while&#125; |</div><div class="line">&#123;kw_do&#125; |</div><div class="line">&#123;kw_for&#125; |</div><div class="line">&#123;kw_break&#125; |</div><div class="line">&#123;kw_continue&#125; |</div><div class="line">&#123;kw_return&#125; &#123;</div><div class="line">	printf(&quot;&lt;kw_%s, %s&gt;\n&quot;, yytext, yytext);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>要放在最前面</p>
-]]></content>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/词法分析器/" rel="tag"># 词法分析器</a>
+          
+            <a href="/tags/flex/" rel="tag"># flex</a>
+          
+            <a href="/tags/bison/" rel="tag"># bison</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/07/Android开发之AndroidAnnotations框架的使用/" rel="next" title="Android开发之AndroidAnnotations框架的使用">
+                <i class="fa fa-chevron-left"></i> Android开发之AndroidAnnotations框架的使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
     
-    <summary type="html">
-    
-      &lt;h3 id=&quot;词法分析器&quot;&gt;&lt;a href=&quot;#词法分析器&quot; class=&quot;headerlink&quot; title=&quot;词法分析器&quot;&gt;&lt;/a&gt;词法分析器&lt;/h3&gt;&lt;p&gt;LEX是UNIX的工具，因此我们需要使用FLEX代替,使得在windows下使用；&lt;br&gt;配对：&lt;br&gt;LEX和YA
-    
-    </summary>
-    
-      <category term="编译原理" scheme="http://yoursite.com/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
-    
-    
-      <category term="词法分析器" scheme="http://yoursite.com/tags/%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8/"/>
-    
-      <category term="flex" scheme="http://yoursite.com/tags/flex/"/>
-    
-      <category term="bison" scheme="http://yoursite.com/tags/bison/"/>
-    
-  </entry>
+  </div>
+
+
+        </div>
+        
+          
   
-  <entry>
-    <title>Android开发之AndroidAnnotations框架的使用</title>
-    <link href="http://yoursite.com/2017/08/07/Android%E5%BC%80%E5%8F%91%E4%B9%8BAndroidAnnotations%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>http://yoursite.com/2017/08/07/Android开发之AndroidAnnotations框架的使用/</id>
-    <published>2017-08-07T03:18:57.000Z</published>
-    <updated>2017-08-07T07:55:43.048Z</updated>
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
     
-    <content type="html"><![CDATA[<h3 id="Android开发之AndroidAnnotations框架的使用"><a href="#Android开发之AndroidAnnotations框架的使用" class="headerlink" title="Android开发之AndroidAnnotations框架的使用"></a><a href="http://blog.csdn.net/yubo_725/article/details/51206302" target="_blank" rel="external">Android开发之AndroidAnnotations框架的使用</a></h3><h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><ol>
-<li>Warning:Android-apt plugin is incompatible with future version of android Gradle plugin. Please use ‘annotationProcessor’ configuration instead.<br><a href="http://blog.csdn.net/pjingying/article/details/71975805?utm_source=itdadao&amp;utm_medium=referral" target="_blank" rel="external">解决</a></li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Android开发之AndroidAnnotations框架的使用&quot;&gt;&lt;a href=&quot;#Android开发之AndroidAnnotations框架的使用&quot; class=&quot;headerlink&quot; title=&quot;Android开发之AndroidAnnotatio
-    
-    </summary>
-    
-      <category term="Android开发" scheme="http://yoursite.com/categories/Android%E5%BC%80%E5%8F%91/"/>
-    
-    
-      <category term="框架" scheme="http://yoursite.com/tags/%E6%A1%86%E6%9E%B6/"/>
-    
-      <category term="AndroidAnnotations" scheme="http://yoursite.com/tags/AndroidAnnotations/"/>
-    
-  </entry>
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Stronghow" />
+          <p class="site-author-name" itemprop="name">Stronghow</p>
+           
+              <p class="site-description motion-element" itemprop="description">一只小坏蛋</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#词法分析器"><span class="nav-number">1.</span> <span class="nav-text">词法分析器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载得网址"><span class="nav-number">2.</span> <span class="nav-text">下载得网址:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用flex"><span class="nav-number">3.</span> <span class="nav-text">使用flex</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#步骤一："><span class="nav-number">3.1.</span> <span class="nav-text">步骤一：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#示列（name-l）"><span class="nav-number">3.1.1.</span> <span class="nav-text">示列（name.l）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#文本-Text-txt"><span class="nav-number">3.1.2.</span> <span class="nav-text">文本(Text.txt)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#步骤二："><span class="nav-number">3.2.</span> <span class="nav-text">步骤二：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#结果"><span class="nav-number">3.2.1.</span> <span class="nav-text">结果</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意"><span class="nav-number">4.</span> <span class="nav-text">注意</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
   
-  <entry>
-    <title>AndroidSDK_Support自带夜间、日间模式切换详解</title>
-    <link href="http://yoursite.com/2017/08/05/AndroidSDK-Support%E8%87%AA%E5%B8%A6%E5%A4%9C%E9%97%B4%E3%80%81%E6%97%A5%E9%97%B4%E6%A8%A1%E5%BC%8F%E5%88%87%E6%8D%A2%E8%AF%A6%E8%A7%A3/"/>
-    <id>http://yoursite.com/2017/08/05/AndroidSDK-Support自带夜间、日间模式切换详解/</id>
-    <published>2017-08-05T07:10:47.000Z</published>
-    <updated>2017-08-05T07:10:47.800Z</updated>
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Stronghow</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
     
-    <summary type="html">
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
     
-    </summary>
-    
-    
-  </entry>
+
+  </div>
+
   
-  <entry>
-    <title>Android_Studio主题配置</title>
-    <link href="http://yoursite.com/2017/08/02/Android-Studio%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/"/>
-    <id>http://yoursite.com/2017/08/02/Android-Studio主题配置/</id>
-    <published>2017-08-02T13:35:58.000Z</published>
-    <updated>2017-08-02T13:35:58.348Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
   
-  <entry>
-    <title>Android_Studio从Git上Clone项目</title>
-    <link href="http://yoursite.com/2017/08/02/Android-Studio%E4%BB%8EGit%E4%B8%8AClone%E9%A1%B9%E7%9B%AE/"/>
-    <id>http://yoursite.com/2017/08/02/Android-Studio从Git上Clone项目/</id>
-    <published>2017-08-02T02:08:27.000Z</published>
-    <updated>2017-08-02T02:23:37.674Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="在Android-Studio中设置Git"><a href="#在Android-Studio中设置Git" class="headerlink" title="在Android Studio中设置Git"></a>在Android Studio中设置Git</h2><h4 id="打开-File-rarr-setting-得到如下图："><a href="#打开-File-rarr-setting-得到如下图：" class="headerlink" title="打开 File  &rarr;  setting, 得到如下图："></a>打开 <code>File</code>  &rarr;  <code>setting</code>, 得到如下图：</h4><p><img src="http://otowics47.bkt.clouddn.com/09.PNG" alt="点击```Test```后弹出git版本，说明配置成功，如果你的android Studio已经配置过，这步可以忽略"></p>
-<h4 id="打开File-rarr-New-rarr-Project-from-Version-Control-rarr-Git-弹出界面如下图："><a href="#打开File-rarr-New-rarr-Project-from-Version-Control-rarr-Git-弹出界面如下图：" class="headerlink" title="打开File &rarr; New &rarr;  Project from Version Control &rarr; Git,弹出界面如下图："></a>打开<code>File</code> &rarr; <code>New</code> &rarr;  <code>Project from Version Control</code> &rarr; <code>Git</code>,弹出界面如下图：</h4><p><img src="http://otowics47.bkt.clouddn.com/10.png" alt="点击```Clone```，等待Clone完成，即可。
-"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;在Android-Studio中设置Git&quot;&gt;&lt;a href=&quot;#在Android-Studio中设置Git&quot; class=&quot;headerlink&quot; title=&quot;在Android Studio中设置Git&quot;&gt;&lt;/a&gt;在Android Studio中设置Git&lt;/
-    
-    </summary>
-    
-      <category term="Android_studio" scheme="http://yoursite.com/categories/Android-studio/"/>
-    
-    
-      <category term="git" scheme="http://yoursite.com/tags/git/"/>
-    
-  </entry>
+
+
   
-  <entry>
-    <title>mysql数据库的导入导出</title>
-    <link href="http://yoursite.com/2017/07/30/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/"/>
-    <id>http://yoursite.com/2017/07/30/mysql数据库的导入导出/</id>
-    <published>2017-07-30T13:33:33.000Z</published>
-    <updated>2017-07-30T13:56:00.137Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="导出数据库"><a href="#导出数据库" class="headerlink" title="导出数据库"></a>导出数据库</h1><h3 id="最常用导出数据库"><a href="#最常用导出数据库" class="headerlink" title="最常用导出数据库"></a>最常用导出数据库</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqldump -u用户名 -<span class="selector-tag">p</span> 数据库名&gt;保存路径\xx.sql</div></pre></td></tr></table></figure>
-<h5 id="注意：此备份只备份数据和数据结构，没有备份存储过程和触发器"><a href="#注意：此备份只备份数据和数据结构，没有备份存储过程和触发器" class="headerlink" title="注意：此备份只备份数据和数据结构，没有备份存储过程和触发器"></a>注意：此备份只备份数据和数据结构，没有备份存储过程和触发器</h5><p><img src="http://otowics47.bkt.clouddn.com/07.PNG" alt="cmd操作"></p>
-<h3 id="导出所有数据库"><a href="#导出所有数据库" class="headerlink" title="导出所有数据库"></a>导出所有数据库</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqldump -u用户名 -<span class="selector-tag">p</span> -a&gt;保存路径\xx.sql</div></pre></td></tr></table></figure>
-<h3 id="只导出数据不导出数据结构"><a href="#只导出数据不导出数据结构" class="headerlink" title="只导出数据不导出数据结构"></a>只导出数据不导出数据结构</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqldump -u用户名 -<span class="selector-tag">p</span> -t数据库名&gt;保存路径\xx.sql</div></pre></td></tr></table></figure>
-<h3 id="导出数据库中的触发器（Events）"><a href="#导出数据库中的触发器（Events）" class="headerlink" title="导出数据库中的触发器（Events）"></a>导出数据库中的触发器（Events）</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqldump -u用户名 -<span class="selector-tag">p</span> -e数据库名&gt;保存路径\xx.sql</div></pre></td></tr></table></figure>
-<h3 id="导出数据库中的存储过程和函数"><a href="#导出数据库中的存储过程和函数" class="headerlink" title="导出数据库中的存储过程和函数"></a>导出数据库中的存储过程和函数</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqldump -u用户名 -<span class="selector-tag">p</span> -r数据库名&gt;保存路径\xx.sql</div></pre></td></tr></table></figure>
-<h1 id="导入数据库"><a href="#导入数据库" class="headerlink" title="导入数据库"></a>导入数据库</h1><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u用户名 -<span class="selector-tag">p</span> 数据库名&lt;备份路径\xx.sql</div></pre></td></tr></table></figure>
-<p><img src="http://otowics47.bkt.clouddn.com/08.PNG" alt="cmd操作"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;导出数据库&quot;&gt;&lt;a href=&quot;#导出数据库&quot; class=&quot;headerlink&quot; title=&quot;导出数据库&quot;&gt;&lt;/a&gt;导出数据库&lt;/h1&gt;&lt;h3 id=&quot;最常用导出数据库&quot;&gt;&lt;a href=&quot;#最常用导出数据库&quot; class=&quot;headerlink&quot; titl
-    
-    </summary>
-    
-      <category term="数据库" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="cmd" scheme="http://yoursite.com/tags/cmd/"/>
-    
-      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
-    
-  </entry>
+
+
+
+
+
+
+
+
+
+
+
   
-  <entry>
-    <title>hexo+github搭建博客流程</title>
-    <link href="http://yoursite.com/2017/07/26/hexo-github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%B5%81%E7%A8%8B/"/>
-    <id>http://yoursite.com/2017/07/26/hexo-github搭建博客流程/</id>
-    <published>2017-07-26T13:19:58.000Z</published>
-    <updated>2017-07-26T13:34:53.937Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p><a href="http://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html" target="_blank" rel="external">小茗同学的博客园</a></p>
-<h2 id="NexT主题配置"><a href="#NexT主题配置" class="headerlink" title="NexT主题配置"></a>NexT主题配置</h2><p><a href="https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud" target="_blank" rel="external">为NexT主题添加文章阅读量统计功能</a></p>
-<p><a href="http://www.jianshu.com/p/ba61be039c1f" target="_blank" rel="external">hexo之next主题优化整理</a></p>
-<p><a href="http://www.jeyzhang.com/next-theme-personal-settings.html" target="_blank" rel="external">hexo next主题配置</a></p>
-<p><a href="https://segmentfault.com/a/1190000009595779" target="_blank" rel="external">Hexo-next主题个性化配置</a>(细节多)</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;环境配置&quot;&gt;&lt;a href=&quot;#环境配置&quot; class=&quot;headerlink&quot; title=&quot;环境配置&quot;&gt;&lt;/a&gt;环境配置&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/liuxianan/p/build-blog-website
-    
-    </summary>
-    
-      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
-    
-    
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
-    
-      <category term="gihub" scheme="http://yoursite.com/tags/gihub/"/>
-    
-  </entry>
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
   
-  <entry>
-    <title>hexo部署到github遇到的坑</title>
-    <link href="http://yoursite.com/2017/07/26/hexo%E9%83%A8%E7%BD%B2%E5%88%B0github%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91/"/>
-    <id>http://yoursite.com/2017/07/26/hexo部署到github遇到的坑/</id>
-    <published>2017-07-26T09:15:01.000Z</published>
-    <updated>2017-07-26T10:18:12.693Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="1-部署到github无法存储图片"><a href="#1-部署到github无法存储图片" class="headerlink" title="1. 部署到github无法存储图片"></a>1. 部署到github无法存储图片</h3><p><strong>解决</strong>： 注册<a href="https://portal.qiniu.com" target="_blank" rel="external">七牛云 </a>  &rarr; 新建存储空间<br>（对象存储） &rarr; <a href="https://github.com/qiniu/QSunSync" target="_blank" rel="external">上传图片工具</a>进行图片上传到七牛云 &rarr; 获取外链 <img src="http://otowics47.bkt.clouddn.com/06.PNG" alt="获取外链"></p>
-<h3 id="2-markdown无法满足需求"><a href="#2-markdown无法满足需求" class="headerlink" title="2. markdown无法满足需求"></a>2. markdown无法满足需求</h3><p><strong>解决</strong>：直接写html<img src="http://otowics47.bkt.clouddn.com/05.PNG" alt="html"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;1-部署到github无法存储图片&quot;&gt;&lt;a href=&quot;#1-部署到github无法存储图片&quot; class=&quot;headerlink&quot; title=&quot;1. 部署到github无法存储图片&quot;&gt;&lt;/a&gt;1. 部署到github无法存储图片&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;
-    
-    </summary>
-    
-      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
-    
-    
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
-    
-      <category term="github pages" scheme="http://yoursite.com/tags/github-pages/"/>
-    
-  </entry>
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
   
-  <entry>
-    <title>windows下用cmd命令netstat查看系统端口使用情况</title>
-    <link href="http://yoursite.com/2017/07/26/windows%E4%B8%8B%E7%94%A8cmd%E5%91%BD%E4%BB%A4netstat%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E7%AB%AF%E5%8F%A3%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5/"/>
-    <id>http://yoursite.com/2017/07/26/windows下用cmd命令netstat查看系统端口使用情况/</id>
-    <published>2017-07-26T07:19:33.000Z</published>
-    <updated>2017-07-26T09:43:55.370Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="大家可以在cmd窗口执行"><a href="#大家可以在cmd窗口执行" class="headerlink" title="大家可以在cmd窗口执行"></a><table><tr><td bgcolor="PowderBlue">大家可以在cmd窗口执行</td></tr></table></h3><p><img src="http://otowics47.bkt.clouddn.com/01.PNG" alt="这里可以看到所有参数"></p>
-<h3 id="查看一个端口被哪个进程占用，然后杀掉他"><a href="#查看一个端口被哪个进程占用，然后杀掉他" class="headerlink" title="查看一个端口被哪个进程占用，然后杀掉他"></a><table><tr><td bgcolor="PowderBlue">查看一个端口被哪个进程占用，然后杀掉他</td></tr></table></h3><p><img src="http://otowics47.bkt.clouddn.com/02.PNG" alt="杀死进程"></p>
-<h3 id="查看任务管理器"><a href="#查看任务管理器" class="headerlink" title="查看任务管理器"></a><table><tr><td bgcolor="PowderBlue">查看任务管理器</td></tr></table></h3><p><img src="http://otowics47.bkt.clouddn.com/03.PNG" alt="任务管理器列表"></p>
-<h3 id="用pid查找程序"><a href="#用pid查找程序" class="headerlink" title="用pid查找程序"></a><table><tr><td bgcolor="PowderBlue">用pid查找程序</td></tr></table></h3><p><img src="http://otowics47.bkt.clouddn.com/04.PNG" alt="查找程序"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;大家可以在cmd窗口执行&quot;&gt;&lt;a href=&quot;#大家可以在cmd窗口执行&quot; class=&quot;headerlink&quot; title=&quot;大家可以在cmd窗口执行&quot;&gt;&lt;/a&gt;&lt;table&gt;&lt;tr&gt;&lt;td bgcolor=&quot;PowderBlue&quot;&gt;大家可以在cmd窗口执行&lt;/
-    
-    </summary>
-    
-      <category term="windows" scheme="http://yoursite.com/categories/windows/"/>
-    
-    
-      <category term="cmd" scheme="http://yoursite.com/tags/cmd/"/>
-    
-  </entry>
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
   
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2017/07/24/hello-world/"/>
-    <id>http://yoursite.com/2017/07/24/hello-world/</id>
-    <published>2017-07-24T07:19:30.174Z</published>
-    <updated>2017-07-24T07:19:30.174Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-    
-    </summary>
-    
-    
-  </entry>
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
   
-</feed>
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("EYILneigt4lAfMS7Fa8K1mpy-gzGzoHsz", "hyOGBcmbVM3zdpylYo5g40wK");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
