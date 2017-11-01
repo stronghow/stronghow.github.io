@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-22T12:20:00.345Z</updated>
+  <updated>2017-11-01T07:56:58.323Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,61 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>linux搭建hexo</title>
+    <link href="http://yoursite.com/2017/11/01/linux%E6%90%AD%E5%BB%BAhexo/"/>
+    <id>http://yoursite.com/2017/11/01/linux搭建hexo/</id>
+    <published>2017-11-01T07:05:14.000Z</published>
+    <updated>2017-11-01T07:56:58.323Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h3><ol>
+<li>去<a href="https://nodejs.org/en/" target="_blank" rel="external">官方网站</a>下载已经编译好的包</li>
+<li>解压压缩包，设置全局路径<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ln -s /media/stronghow/Stronghow/下载/ode-v8.9.0-linux-x64/bin/node  /usr/local/bin/node</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>其中 /media/stronghow/Stronghow/下载/ode-v8.9.0-linux-x64/bin/node 是解压包的路径<br>要在 /media/stronghow/Stronghow/下载/ode-v8.9.0-linux-x64/bin 下执行，减少不必要的麻烦</p>
+<ol>
+<li><p>同理，设置npm</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ln -s /media/stronghow/Stronghow/下载/ode-v8.9.0-linux-x64/bin/npm  /usr/local/bin/npm</div></pre></td></tr></table></figure>
+</li>
+<li><p>配置npm的镜像为国内淘宝镜像，不然有的包下载不了（比如 hexo, 好坑）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo npm install -g cnpm --registry=https://registry.npm.taobao.org</div></pre></td></tr></table></figure>
+</li>
+<li><p>设置cnpm为全局路径</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ln -s /media/stronghow/Stronghow/下载/ode-v8.9.0-linux-x64/bin/cnpm   /usr/local/bin/cnpm</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装hexo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo cnpm insatll hexo-cli -g</div></pre></td></tr></table></figure>
+</li>
+<li><p>设置hexo为全局路径</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ln -s /media/stronghow/Stronghow/下载/ode-v8.9.0-linux-x64/bin/hexo   /usr/local/bin/hexo</div></pre></td></tr></table></figure>
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;安装nodejs&quot;&gt;&lt;a href=&quot;#安装nodejs&quot; class=&quot;headerlink&quot; title=&quot;安装nodejs&quot;&gt;&lt;/a&gt;安装nodejs&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;去&lt;a href=&quot;https://nodejs.org/en/&quot; target
+    
+    </summary>
+    
+      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+      <category term="nodejs" scheme="http://yoursite.com/tags/nodejs/"/>
+    
+      <category term="npm" scheme="http://yoursite.com/tags/npm/"/>
+    
+  </entry>
+  
+  <entry>
     <title>在windows下安装flex和bison</title>
     <link href="http://yoursite.com/2017/10/21/%E5%9C%A8windows%E4%B8%8B%E5%AE%89%E8%A3%85flex%E5%92%8Cbison/"/>
     <id>http://yoursite.com/2017/10/21/在windows下安装flex和bison/</id>
     <published>2017-10-21T13:29:29.000Z</published>
-    <updated>2017-10-22T12:20:00.345Z</updated>
+    <updated>2017-10-22T12:20:00.346Z</updated>
     
     <content type="html"><![CDATA[<h3 id="词法分析器"><a href="#词法分析器" class="headerlink" title="词法分析器"></a>词法分析器</h3><p>LEX是UNIX的工具，因此我们需要使用FLEX代替,使得在windows下使用；<br>配对：<br>LEX和YACC<br>FLEX和BISON<br>JFLEX和JavaCUP</p>
 <h3 id="下载得网址"><a href="#下载得网址" class="headerlink" title="下载得网址:"></a>下载得网址:</h3><p><a href="http://gnuwin32.sourceforge.net/packages/flex.htm" target="_blank" rel="external">flex</a><br><a href="http://gnuwin32.sourceforge.net/packages/bison.htm" target="_blank" rel="external">bison</a><br> 最偷懒得方法就是直接下载 Complete package, except sources<br>打开右键我得电脑→属性→內容→高级→环境变量→系统变量→path→编辑<br>加入;C:\Program Files(x86)\GnuWin32\bin;<br>cmd<br>键入<br>flex -V<br>bison -V<br>这样就能看到正确得信息就表示安装成功了！！</p>
@@ -55,7 +105,7 @@
     <link href="http://yoursite.com/2017/08/07/Android%E5%BC%80%E5%8F%91%E4%B9%8BAndroidAnnotations%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     <id>http://yoursite.com/2017/08/07/Android开发之AndroidAnnotations框架的使用/</id>
     <published>2017-08-07T03:18:57.000Z</published>
-    <updated>2017-08-07T07:55:43.048Z</updated>
+    <updated>2017-08-07T07:55:43.049Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Android开发之AndroidAnnotations框架的使用"><a href="#Android开发之AndroidAnnotations框架的使用" class="headerlink" title="Android开发之AndroidAnnotations框架的使用"></a><a href="http://blog.csdn.net/yubo_725/article/details/51206302" target="_blank" rel="external">Android开发之AndroidAnnotations框架的使用</a></h3><h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><ol>
 <li>Warning:Android-apt plugin is incompatible with future version of android Gradle plugin. Please use ‘annotationProcessor’ configuration instead.<br><a href="http://blog.csdn.net/pjingying/article/details/71975805?utm_source=itdadao&amp;utm_medium=referral" target="_blank" rel="external">解决</a></li>
@@ -82,7 +132,7 @@
     <link href="http://yoursite.com/2017/08/05/AndroidSDK-Support%E8%87%AA%E5%B8%A6%E5%A4%9C%E9%97%B4%E3%80%81%E6%97%A5%E9%97%B4%E6%A8%A1%E5%BC%8F%E5%88%87%E6%8D%A2%E8%AF%A6%E8%A7%A3/"/>
     <id>http://yoursite.com/2017/08/05/AndroidSDK-Support自带夜间、日间模式切换详解/</id>
     <published>2017-08-05T07:10:47.000Z</published>
-    <updated>2017-08-05T07:10:47.800Z</updated>
+    <updated>2017-08-05T07:10:47.801Z</updated>
     
     <summary type="html">
     
@@ -96,7 +146,7 @@
     <link href="http://yoursite.com/2017/08/02/Android-Studio%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/"/>
     <id>http://yoursite.com/2017/08/02/Android-Studio主题配置/</id>
     <published>2017-08-02T13:35:58.000Z</published>
-    <updated>2017-08-02T13:35:58.348Z</updated>
+    <updated>2017-08-02T13:35:58.349Z</updated>
     
     <summary type="html">
     
@@ -156,9 +206,9 @@
       <category term="数据库" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="cmd" scheme="http://yoursite.com/tags/cmd/"/>
-    
       <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+      <category term="cmd" scheme="http://yoursite.com/tags/cmd/"/>
     
   </entry>
   
@@ -167,7 +217,7 @@
     <link href="http://yoursite.com/2017/07/26/hexo-github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%B5%81%E7%A8%8B/"/>
     <id>http://yoursite.com/2017/07/26/hexo-github搭建博客流程/</id>
     <published>2017-07-26T13:19:58.000Z</published>
-    <updated>2017-07-26T13:34:53.937Z</updated>
+    <updated>2017-07-26T13:34:53.938Z</updated>
     
     <content type="html"><![CDATA[<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p><a href="http://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html" target="_blank" rel="external">小茗同学的博客园</a></p>
 <h2 id="NexT主题配置"><a href="#NexT主题配置" class="headerlink" title="NexT主题配置"></a>NexT主题配置</h2><p><a href="https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud" target="_blank" rel="external">为NexT主题添加文章阅读量统计功能</a></p>
