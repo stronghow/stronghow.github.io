@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-11-01T07:56:58.323Z</updated>
+  <updated>2017-11-01T12:29:24.236Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux_4.x添加系统调用</title>
+    <link href="http://yoursite.com/2017/11/01/linux-4-x%E6%B7%BB%E5%8A%A0%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/"/>
+    <id>http://yoursite.com/2017/11/01/linux-4-x添加系统调用/</id>
+    <published>2017-11-01T11:15:00.000Z</published>
+    <updated>2017-11-01T12:29:24.236Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="4-x内核添加系统调用"><a href="#4-x内核添加系统调用" class="headerlink" title="4.x内核添加系统调用"></a>4.x内核添加系统调用</h3><h4 id="到官方网站下载源码我下的是4-13-8"><a href="#到官方网站下载源码我下的是4-13-8" class="headerlink" title="到官方网站下载源码我下的是4.13.8"></a>到<a href="https://www.kernel.org/" target="_blank" rel="external">官方网站</a>下载源码我下的是4.13.8</h4><h4 id="解压压缩包"><a href="#解压压缩包" class="headerlink" title="解压压缩包"></a>解压压缩包</h4><h5 id="我们先切换到root用户-把下载好的内核压缩文件放到-usr-src下，然后进入这个目录"><a href="#我们先切换到root用户-把下载好的内核压缩文件放到-usr-src下，然后进入这个目录" class="headerlink" title="我们先切换到root用户,把下载好的内核压缩文件放到/usr/src下，然后进入这个目录"></a>我们先切换到root用户,把下载好的内核压缩文件放到/usr/src下，然后进入这个目录</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">xz -d linux-4.13.8.tar.xz</div><div class="line">tar -xvf linux-4.13.8.tar</div></pre></td></tr></table></figure>
+<h4 id="清除编译历史"><a href="#清除编译历史" class="headerlink" title="清除编译历史"></a>清除编译历史</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make mrproper</div></pre></td></tr></table></figure>
+<h5 id="执行这条命令需要先安装一个包"><a href="#执行这条命令需要先安装一个包" class="headerlink" title="执行这条命令需要先安装一个包"></a>执行这条命令需要先安装一个包</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt install libncurses5-dev</div></pre></td></tr></table></figure>
+<h4 id="配置内核选项"><a href="#配置内核选项" class="headerlink" title="配置内核选项"></a>配置内核选项</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make menuconfig</div></pre></td></tr></table></figure>
+<h5 id="一般保持默认即可"><a href="#一般保持默认即可" class="headerlink" title="一般保持默认即可"></a>一般保持默认即可</h5><h4 id="编译内核"><a href="#编译内核" class="headerlink" title="编译内核"></a>编译内核</h4><h5 id="内-核-配-置-完-成-后-编-译-内-核-并-生-成-启-动-映-像-文-件-bzImage-位于-arch-x86-64-boot-bzImage"><a href="#内-核-配-置-完-成-后-编-译-内-核-并-生-成-启-动-映-像-文-件-bzImage-位于-arch-x86-64-boot-bzImage" class="headerlink" title="内 核 配 置 完 成 后 , 编 译 内 核 , 并 生 成 启 动 映 像 文 件 bzImage ( 位于./arch/x86_64/boot/bzImage)"></a>内 核 配 置 完 成 后 , 编 译 内 核 , 并 生 成 启 动 映 像 文 件 bzImage ( 位于./arch/x86_64/boot/bzImage)</h5><p>:<br>执行命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make</div></pre></td></tr></table></figure></p>
+<p>如果是多核 cpu 可使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make -j4</div></pre></td></tr></table></figure></p>
+<p>来加快编译速度。4代表4个进程,编译过程可能出现如图错误：<br><img src="http://otowics47.bkt.clouddn.com/11.png" alt="编译错误"><br>这是因为没有安装 openssl, openssl 的安装方法是:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install libssl-dev</div></pre></td></tr></table></figure></p>
+<p>openssl 安装完成后,再执行 make 命令即可,需要较长时间</p>
+<h4 id="编译模块"><a href="#编译模块" class="headerlink" title="编译模块"></a>编译模块</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make modules</div></pre></td></tr></table></figure>
+<p>第一次编译模块需要很长时间。</p>
+<h4 id="安装内核"><a href="#安装内核" class="headerlink" title="安装内核"></a>安装内核</h4><p>(1)安装模块:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make modules_install</div></pre></td></tr></table></figure></p>
+<p>(2)安装内核:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#make install</div></pre></td></tr></table></figure></p>
+<h4 id="配置-grub-引导程序"><a href="#配置-grub-引导程序" class="headerlink" title="配置 grub 引导程序"></a>配置 grub 引导程序</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">update-grub2</div></pre></td></tr></table></figure>
+<h4 id="重启系统"><a href="#重启系统" class="headerlink" title="重启系统"></a>重启系统</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">reboo</div></pre></td></tr></table></figure>
+<h4 id="查看内核版本"><a href="#查看内核版本" class="headerlink" title="查看内核版本"></a>查看内核版本</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">uname -a</div></pre></td></tr></table></figure>
+<p><img src="http://otowics47.bkt.clouddn.com/12.png" alt="如图"></p>
+<h3 id="添加系统调用"><a href="#添加系统调用" class="headerlink" title="添加系统调用"></a>添加系统调用</h3><p>首先，给出几个关键的路径：<br>/usr/src/linux-4.13.8/arch/x86/include/asma/sysclls.h                自定义的系统调用函数声明<br>/usr/src/linux-4.13.8/kernel/sys.c                                                     自定义的系统调用函数实现<br>/usr/src/linux-4.13.8/arch/x86/entry/syscalls/syscall_64.tbl       系统调用表</p>
+<h4 id="分配系统调用号-修改系统调用表"><a href="#分配系统调用号-修改系统调用表" class="headerlink" title="分配系统调用号,修改系统调用表"></a>分配系统调用号,修改系统调用表</h4><p>查看系统调用表(./arch/x86/entyr/syscalls/syscall_64.tbl)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">333 64 mysetnice sys_mysetnice</div></pre></td></tr></table></figure></p>
+<p><img src="http://otowics47.bkt.clouddn.com/13.png" alt="如图"><br>每个系统调用在表中占一表项,其格式为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;系统调用号&gt; &lt;commom/64/x32&gt; &lt;系统调用名&gt; &lt;服务例程入口地址&gt;</div></pre></td></tr></table></figure></p>
+<h4 id="在syscalls-h文件内定义函数声明"><a href="#在syscalls-h文件内定义函数声明" class="headerlink" title="在syscalls.h文件内定义函数声明"></a>在syscalls.h文件内定义函数声明</h4><p><img src="http://otowics47.bkt.clouddn.com/14.png" alt="如图"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">asmlinkage int sys_mysetnice(pid_t pid, int flag, int nicevalue);</div></pre></td></tr></table></figure></p>
+<p>返回值、参数和正常定义函数一样，函数名一定要以 sys_ 开头asmlinkage不要缺少。<br>函数定义前加宏asmlinkage ,表示这些函数通过堆栈而不是通过寄存器传递参数。</p>
+<h4 id="在sys-c内实现上面声明的函数"><a href="#在sys-c内实现上面声明的函数" class="headerlink" title="在sys.c内实现上面声明的函数"></a>在sys.c内实现上面声明的函数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">asmlinkage int sys_mysetnice(pid_t pid, int flag, int nicevalue)</div><div class="line">&#123;</div><div class="line">    struct pid * kpid;</div><div class="line">    struct task_struct * task;</div><div class="line">    int nicebef;</div><div class="line">    kpid = find_get_pid(pid);/* 返回pid */</div><div class="line">    task = pid_task(kpid, PIDTYPE_PID);/* 返回task_struct */</div><div class="line">    nicebef = task_nice(task);/* 返回进程当前nice值 */</div><div class="line">    if(flag == 1)</div><div class="line">    &#123;</div><div class="line">        set_user_nice(task, nicevalue);/* 修改进程nice值 */</div><div class="line">        printk(&quot;修改前nice值：%d\t修改后nice值：%d\n&quot;, nicebef, nicevalue);</div><div class="line">        return 0;</div><div class="line">    &#125;</div><div class="line">    else if(flag == 0)</div><div class="line">    &#123;</div><div class="line">        printk(&quot;该进程的nice值为%d\n&quot;, nicebef);</div><div class="line">        return 0;</div><div class="line">    &#125;</div><div class="line">    return EFAULT;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="重新编译内核"><a href="#重新编译内核" class="headerlink" title="重新编译内核"></a>重新编译内核</h4><h4 id="编写测试用例"><a href="#编写测试用例" class="headerlink" title="编写测试用例"></a>编写测试用例</h4><p>Linux nice值范围 -20~19<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">#include &lt;unistd.h&gt;</div><div class="line">#include &lt;syscall.h&gt;</div><div class="line">#include &lt;stdio.h&gt;</div><div class="line">#include &lt;stdlib.h&gt;</div><div class="line"></div><div class="line">int main(int argc, char *argv[])</div><div class="line">&#123;</div><div class="line">     pid_t tid;</div><div class="line">     int nicevalue,resualt;</div><div class="line">     tid = getpid();</div><div class="line">     printf(&quot;pid = %d\n&quot;,tid);</div><div class="line">     resualt = syscall(333,tid,0,0);//read</div><div class="line">     printf(&quot;resualt = %ld\n&quot;,resualt);</div><div class="line">     resualt = syscall(333,tid,1,1);//set</div><div class="line">     printf(&quot;resualt = %ld\n&quot;,resualt);</div><div class="line">     resualt = syscall(333,tid,0,0);//read</div><div class="line">     printf(&quot;resualt = %ld\n&quot;,resualt);</div><div class="line">     return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>编译<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gcc -o mysetnice.out mysetnice.c</div></pre></td></tr></table></figure></p>
+<p>执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./mysetnice.out</div></pre></td></tr></table></figure></p>
+<p>测试结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo dmesg</div></pre></td></tr></table></figure></p>
+<p><img src="http://otowics47.bkt.clouddn.com/15.png" alt="如图"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;4-x内核添加系统调用&quot;&gt;&lt;a href=&quot;#4-x内核添加系统调用&quot; class=&quot;headerlink&quot; title=&quot;4.x内核添加系统调用&quot;&gt;&lt;/a&gt;4.x内核添加系统调用&lt;/h3&gt;&lt;h4 id=&quot;到官方网站下载源码我下的是4-13-8&quot;&gt;&lt;a href=
+    
+    </summary>
+    
+      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+      <category term="系统调用" scheme="http://yoursite.com/tags/%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>linux搭建hexo</title>

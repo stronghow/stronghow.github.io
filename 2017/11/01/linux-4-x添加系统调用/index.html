@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="linux,系统调用," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="4.x内核添加系统调用到官方网站下载源码我下的是4.13.8解压压缩包我们先切换到root用户,把下载好的内核压缩文件放到/usr/src下，然后进入这个目录12xz -d linux-4.13.8.tar.xztar -xvf linux-4.13.8.tar 清除编译历史1make mrproper 执行这条命令需要先安装一个包1sudo apt install libncurses5-dev">
+<meta name="keywords" content="linux,系统调用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux_4.x添加系统调用">
+<meta property="og:url" content="http://yoursite.com/2017/11/01/linux-4-x添加系统调用/index.html">
+<meta property="og:site_name" content="博客">
+<meta property="og:description" content="4.x内核添加系统调用到官方网站下载源码我下的是4.13.8解压压缩包我们先切换到root用户,把下载好的内核压缩文件放到/usr/src下，然后进入这个目录12xz -d linux-4.13.8.tar.xztar -xvf linux-4.13.8.tar 清除编译历史1make mrproper 执行这条命令需要先安装一个包1sudo apt install libncurses5-dev">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://otowics47.bkt.clouddn.com/11.png">
+<meta property="og:image" content="http://otowics47.bkt.clouddn.com/12.png">
+<meta property="og:image" content="http://otowics47.bkt.clouddn.com/13.png">
+<meta property="og:image" content="http://otowics47.bkt.clouddn.com/14.png">
+<meta property="og:image" content="http://otowics47.bkt.clouddn.com/15.png">
+<meta property="og:updated_time" content="2017-11-01T12:29:24.236Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux_4.x添加系统调用">
+<meta name="twitter:description" content="4.x内核添加系统调用到官方网站下载源码我下的是4.13.8解压压缩包我们先切换到root用户,把下载好的内核压缩文件放到/usr/src下，然后进入这个目录12xz -d linux-4.13.8.tar.xztar -xvf linux-4.13.8.tar 清除编译历史1make mrproper 执行这条命令需要先安装一个包1sudo apt install libncurses5-dev">
+<meta name="twitter:image" content="http://otowics47.bkt.clouddn.com/11.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/11/01/linux-4-x添加系统调用/"/>
+
+
+
+
+
+  <title>linux_4.x添加系统调用 | 博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/01/linux-4-x添加系统调用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Stronghow">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">linux_4.x添加系统调用</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-01T19:15:00+08:00">
+                2017-11-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/11/01/linux-4-x添加系统调用/" class="leancloud_visitors" data-flag-title="linux_4.x添加系统调用">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="4-x内核添加系统调用"><a href="#4-x内核添加系统调用" class="headerlink" title="4.x内核添加系统调用"></a>4.x内核添加系统调用</h3><h4 id="到官方网站下载源码我下的是4-13-8"><a href="#到官方网站下载源码我下的是4-13-8" class="headerlink" title="到官方网站下载源码我下的是4.13.8"></a>到<a href="https://www.kernel.org/" target="_blank" rel="external">官方网站</a>下载源码我下的是4.13.8</h4><h4 id="解压压缩包"><a href="#解压压缩包" class="headerlink" title="解压压缩包"></a>解压压缩包</h4><h5 id="我们先切换到root用户-把下载好的内核压缩文件放到-usr-src下，然后进入这个目录"><a href="#我们先切换到root用户-把下载好的内核压缩文件放到-usr-src下，然后进入这个目录" class="headerlink" title="我们先切换到root用户,把下载好的内核压缩文件放到/usr/src下，然后进入这个目录"></a>我们先切换到root用户,把下载好的内核压缩文件放到/usr/src下，然后进入这个目录</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">xz -d linux-4.13.8.tar.xz</div><div class="line">tar -xvf linux-4.13.8.tar</div></pre></td></tr></table></figure>
+<h4 id="清除编译历史"><a href="#清除编译历史" class="headerlink" title="清除编译历史"></a>清除编译历史</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make mrproper</div></pre></td></tr></table></figure>
+<h5 id="执行这条命令需要先安装一个包"><a href="#执行这条命令需要先安装一个包" class="headerlink" title="执行这条命令需要先安装一个包"></a>执行这条命令需要先安装一个包</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt install libncurses5-dev</div></pre></td></tr></table></figure>
+<h4 id="配置内核选项"><a href="#配置内核选项" class="headerlink" title="配置内核选项"></a>配置内核选项</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make menuconfig</div></pre></td></tr></table></figure>
+<h5 id="一般保持默认即可"><a href="#一般保持默认即可" class="headerlink" title="一般保持默认即可"></a>一般保持默认即可</h5><h4 id="编译内核"><a href="#编译内核" class="headerlink" title="编译内核"></a>编译内核</h4><h5 id="内-核-配-置-完-成-后-编-译-内-核-并-生-成-启-动-映-像-文-件-bzImage-位于-arch-x86-64-boot-bzImage"><a href="#内-核-配-置-完-成-后-编-译-内-核-并-生-成-启-动-映-像-文-件-bzImage-位于-arch-x86-64-boot-bzImage" class="headerlink" title="内 核 配 置 完 成 后 , 编 译 内 核 , 并 生 成 启 动 映 像 文 件 bzImage ( 位于./arch/x86_64/boot/bzImage)"></a>内 核 配 置 完 成 后 , 编 译 内 核 , 并 生 成 启 动 映 像 文 件 bzImage ( 位于./arch/x86_64/boot/bzImage)</h5><p>:<br>执行命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make</div></pre></td></tr></table></figure></p>
+<p>如果是多核 cpu 可使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make -j4</div></pre></td></tr></table></figure></p>
+<p>来加快编译速度。4代表4个进程,编译过程可能出现如图错误：<br><img src="http://otowics47.bkt.clouddn.com/11.png" alt="编译错误"><br>这是因为没有安装 openssl, openssl 的安装方法是:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install libssl-dev</div></pre></td></tr></table></figure></p>
+<p>openssl 安装完成后,再执行 make 命令即可,需要较长时间</p>
+<h4 id="编译模块"><a href="#编译模块" class="headerlink" title="编译模块"></a>编译模块</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make modules</div></pre></td></tr></table></figure>
+<p>第一次编译模块需要很长时间。</p>
+<h4 id="安装内核"><a href="#安装内核" class="headerlink" title="安装内核"></a>安装内核</h4><p>(1)安装模块:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make modules_install</div></pre></td></tr></table></figure></p>
+<p>(2)安装内核:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#make install</div></pre></td></tr></table></figure></p>
+<h4 id="配置-grub-引导程序"><a href="#配置-grub-引导程序" class="headerlink" title="配置 grub 引导程序"></a>配置 grub 引导程序</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">update-grub2</div></pre></td></tr></table></figure>
+<h4 id="重启系统"><a href="#重启系统" class="headerlink" title="重启系统"></a>重启系统</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">reboo</div></pre></td></tr></table></figure>
+<h4 id="查看内核版本"><a href="#查看内核版本" class="headerlink" title="查看内核版本"></a>查看内核版本</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">uname -a</div></pre></td></tr></table></figure>
+<p><img src="http://otowics47.bkt.clouddn.com/12.png" alt="如图"></p>
+<h3 id="添加系统调用"><a href="#添加系统调用" class="headerlink" title="添加系统调用"></a>添加系统调用</h3><p>首先，给出几个关键的路径：<br>/usr/src/linux-4.13.8/arch/x86/include/asma/sysclls.h                自定义的系统调用函数声明<br>/usr/src/linux-4.13.8/kernel/sys.c                                                     自定义的系统调用函数实现<br>/usr/src/linux-4.13.8/arch/x86/entry/syscalls/syscall_64.tbl       系统调用表</p>
+<h4 id="分配系统调用号-修改系统调用表"><a href="#分配系统调用号-修改系统调用表" class="headerlink" title="分配系统调用号,修改系统调用表"></a>分配系统调用号,修改系统调用表</h4><p>查看系统调用表(./arch/x86/entyr/syscalls/syscall_64.tbl)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">333 64 mysetnice sys_mysetnice</div></pre></td></tr></table></figure></p>
+<p><img src="http://otowics47.bkt.clouddn.com/13.png" alt="如图"><br>每个系统调用在表中占一表项,其格式为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;系统调用号&gt; &lt;commom/64/x32&gt; &lt;系统调用名&gt; &lt;服务例程入口地址&gt;</div></pre></td></tr></table></figure></p>
+<h4 id="在syscalls-h文件内定义函数声明"><a href="#在syscalls-h文件内定义函数声明" class="headerlink" title="在syscalls.h文件内定义函数声明"></a>在syscalls.h文件内定义函数声明</h4><p><img src="http://otowics47.bkt.clouddn.com/14.png" alt="如图"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">asmlinkage int sys_mysetnice(pid_t pid, int flag, int nicevalue);</div></pre></td></tr></table></figure></p>
+<p>返回值、参数和正常定义函数一样，函数名一定要以 sys_ 开头asmlinkage不要缺少。<br>函数定义前加宏asmlinkage ,表示这些函数通过堆栈而不是通过寄存器传递参数。</p>
+<h4 id="在sys-c内实现上面声明的函数"><a href="#在sys-c内实现上面声明的函数" class="headerlink" title="在sys.c内实现上面声明的函数"></a>在sys.c内实现上面声明的函数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">asmlinkage int sys_mysetnice(pid_t pid, int flag, int nicevalue)</div><div class="line">&#123;</div><div class="line">    struct pid * kpid;</div><div class="line">    struct task_struct * task;</div><div class="line">    int nicebef;</div><div class="line">    kpid = find_get_pid(pid);/* 返回pid */</div><div class="line">    task = pid_task(kpid, PIDTYPE_PID);/* 返回task_struct */</div><div class="line">    nicebef = task_nice(task);/* 返回进程当前nice值 */</div><div class="line">    if(flag == 1)</div><div class="line">    &#123;</div><div class="line">        set_user_nice(task, nicevalue);/* 修改进程nice值 */</div><div class="line">        printk(&quot;修改前nice值：%d\t修改后nice值：%d\n&quot;, nicebef, nicevalue);</div><div class="line">        return 0;</div><div class="line">    &#125;</div><div class="line">    else if(flag == 0)</div><div class="line">    &#123;</div><div class="line">        printk(&quot;该进程的nice值为%d\n&quot;, nicebef);</div><div class="line">        return 0;</div><div class="line">    &#125;</div><div class="line">    return EFAULT;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="重新编译内核"><a href="#重新编译内核" class="headerlink" title="重新编译内核"></a>重新编译内核</h4><h4 id="编写测试用例"><a href="#编写测试用例" class="headerlink" title="编写测试用例"></a>编写测试用例</h4><p>Linux nice值范围 -20~19<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">#include &lt;unistd.h&gt;</div><div class="line">#include &lt;syscall.h&gt;</div><div class="line">#include &lt;stdio.h&gt;</div><div class="line">#include &lt;stdlib.h&gt;</div><div class="line"></div><div class="line">int main(int argc, char *argv[])</div><div class="line">&#123;</div><div class="line">     pid_t tid;</div><div class="line">     int nicevalue,resualt;</div><div class="line">     tid = getpid();</div><div class="line">     printf(&quot;pid = %d\n&quot;,tid);</div><div class="line">     resualt = syscall(333,tid,0,0);//read</div><div class="line">     printf(&quot;resualt = %ld\n&quot;,resualt);</div><div class="line">     resualt = syscall(333,tid,1,1);//set</div><div class="line">     printf(&quot;resualt = %ld\n&quot;,resualt);</div><div class="line">     resualt = syscall(333,tid,0,0);//read</div><div class="line">     printf(&quot;resualt = %ld\n&quot;,resualt);</div><div class="line">     return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>编译<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gcc -o mysetnice.out mysetnice.c</div></pre></td></tr></table></figure></p>
+<p>执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./mysetnice.out</div></pre></td></tr></table></figure></p>
+<p>测试结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo dmesg</div></pre></td></tr></table></figure></p>
+<p><img src="http://otowics47.bkt.clouddn.com/15.png" alt="如图"></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+            <a href="/tags/系统调用/" rel="tag"># 系统调用</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/01/linux搭建hexo/" rel="next" title="linux搭建hexo">
+                <i class="fa fa-chevron-left"></i> linux搭建hexo
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Stronghow" />
+          <p class="site-author-name" itemprop="name">Stronghow</p>
+           
+              <p class="site-description motion-element" itemprop="description">一只小坏蛋</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-x内核添加系统调用"><span class="nav-number">1.</span> <span class="nav-text">4.x内核添加系统调用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#到官方网站下载源码我下的是4-13-8"><span class="nav-number">1.1.</span> <span class="nav-text">到官方网站下载源码我下的是4.13.8</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解压压缩包"><span class="nav-number">1.2.</span> <span class="nav-text">解压压缩包</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#我们先切换到root用户-把下载好的内核压缩文件放到-usr-src下，然后进入这个目录"><span class="nav-number">1.2.1.</span> <span class="nav-text">我们先切换到root用户,把下载好的内核压缩文件放到/usr/src下，然后进入这个目录</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#清除编译历史"><span class="nav-number">1.3.</span> <span class="nav-text">清除编译历史</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#执行这条命令需要先安装一个包"><span class="nav-number">1.3.1.</span> <span class="nav-text">执行这条命令需要先安装一个包</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置内核选项"><span class="nav-number">1.4.</span> <span class="nav-text">配置内核选项</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#一般保持默认即可"><span class="nav-number">1.4.1.</span> <span class="nav-text">一般保持默认即可</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编译内核"><span class="nav-number">1.5.</span> <span class="nav-text">编译内核</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#内-核-配-置-完-成-后-编-译-内-核-并-生-成-启-动-映-像-文-件-bzImage-位于-arch-x86-64-boot-bzImage"><span class="nav-number">1.5.1.</span> <span class="nav-text">内 核 配 置 完 成 后 , 编 译 内 核 , 并 生 成 启 动 映 像 文 件 bzImage ( 位于./arch/x86_64/boot/bzImage)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编译模块"><span class="nav-number">1.6.</span> <span class="nav-text">编译模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装内核"><span class="nav-number">1.7.</span> <span class="nav-text">安装内核</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置-grub-引导程序"><span class="nav-number">1.8.</span> <span class="nav-text">配置 grub 引导程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重启系统"><span class="nav-number">1.9.</span> <span class="nav-text">重启系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看内核版本"><span class="nav-number">1.10.</span> <span class="nav-text">查看内核版本</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加系统调用"><span class="nav-number">2.</span> <span class="nav-text">添加系统调用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分配系统调用号-修改系统调用表"><span class="nav-number">2.1.</span> <span class="nav-text">分配系统调用号,修改系统调用表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在syscalls-h文件内定义函数声明"><span class="nav-number">2.2.</span> <span class="nav-text">在syscalls.h文件内定义函数声明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在sys-c内实现上面声明的函数"><span class="nav-number">2.3.</span> <span class="nav-text">在sys.c内实现上面声明的函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重新编译内核"><span class="nav-number">2.4.</span> <span class="nav-text">重新编译内核</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编写测试用例"><span class="nav-number">2.5.</span> <span class="nav-text">编写测试用例</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Stronghow</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("EYILneigt4lAfMS7Fa8K1mpy-gzGzoHsz", "hyOGBcmbVM3zdpylYo5g40wK");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
