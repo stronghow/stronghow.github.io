@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Linux添加模块遇到的坑]]></title>
+    <url>%2F2017%2F11%2F02%2FLinux%E6%B7%BB%E5%8A%A0%E6%A8%A1%E5%9D%97%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%2F</url>
+    <content type="text"><![CDATA[传递参数问题123static pid_t pid;//参数申明smodule_param(pid,int,0644); //参数说明 虽然 pid_t 是 int ,但是写成这样会 make 不通过报错123static pid_t pid;//参数申明smodule_param(pid,pid_t,0644); //参数说明 find_task_by_vpid undefined 问题编译的时候出现下面的警告：WARNING: “find_task_by_vpid” [/home/work/try/va2pa/va2pa.ko] undefined! find_task_by_vpid没有被export(Kernel 里面还有定义该函数，但是没有导出symbol，所以 driver 里面不能再使用)。具体信息可以参考： 解决：1pid_task(find_vpid(pid), PIDTYPE_PID)]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>module</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[linux_4.x添加系统调用]]></title>
     <url>%2F2017%2F11%2F01%2Flinux-4-x%E6%B7%BB%E5%8A%A0%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8%2F</url>
     <content type="text"><![CDATA[4.x内核添加系统调用到官方网站下载源码我下的是4.13.8解压压缩包我们先切换到root用户,把下载好的内核压缩文件放到/usr/src下，然后进入这个目录12xz -d linux-4.13.8.tar.xztar -xvf linux-4.13.8.tar 清除编译历史1make mrproper 执行这条命令需要先安装一个包1sudo apt install libncurses5-dev 配置内核选项1make menuconfig 一般保持默认即可编译内核内 核 配 置 完 成 后 , 编 译 内 核 , 并 生 成 启 动 映 像 文 件 bzImage ( 位于./arch/x86_64/boot/bzImage):执行命令:1make 如果是多核 cpu 可使用1make -j4 来加快编译速度。4代表4个进程,编译过程可能出现如图错误：这是因为没有安装 openssl, openssl 的安装方法是:1apt-get install libssl-dev openssl 安装完成后,再执行 make 命令即可,需要较长时间 编译模块1make modules 第一次编译模块需要很长时间。 安装内核(1)安装模块:1make modules_install (2)安装内核:1#make install 配置 grub 引导程序1update-grub2 重启系统1reboo 查看内核版本1uname -a 添加系统调用首先，给出几个关键的路径：/usr/src/linux-4.13.8/arch/x86/include/asma/sysclls.h 自定义的系统调用函数声明/usr/src/linux-4.13.8/kernel/sys.c 自定义的系统调用函数实现/usr/src/linux-4.13.8/arch/x86/entry/syscalls/syscall_64.tbl 系统调用表 分配系统调用号,修改系统调用表查看系统调用表(./arch/x86/entyr/syscalls/syscall_64.tbl)1333 64 mysetnice sys_mysetnice 每个系统调用在表中占一表项,其格式为:1&lt;系统调用号&gt; &lt;commom/64/x32&gt; &lt;系统调用名&gt; &lt;服务例程入口地址&gt; 在syscalls.h文件内定义函数声明1asmlinkage int sys_mysetnice(pid_t pid, int flag, int nicevalue); 返回值、参数和正常定义函数一样，函数名一定要以 sys_ 开头asmlinkage不要缺少。函数定义前加宏asmlinkage ,表示这些函数通过堆栈而不是通过寄存器传递参数。 在sys.c内实现上面声明的函数123456789101112131415161718192021asmlinkage int sys_mysetnice(pid_t pid, int flag, int nicevalue)&#123; struct pid * kpid; struct task_struct * task; int nicebef; kpid = find_get_pid(pid);/* 返回pid */ task = pid_task(kpid, PIDTYPE_PID);/* 返回task_struct */ nicebef = task_nice(task);/* 返回进程当前nice值 */ if(flag == 1) &#123; set_user_nice(task, nicevalue);/* 修改进程nice值 */ printk(&quot;修改前nice值：%d\t修改后nice值：%d\n&quot;, nicebef, nicevalue); return 0; &#125; else if(flag == 0) &#123; printk(&quot;该进程的nice值为%d\n&quot;, nicebef); return 0; &#125; return EFAULT;&#125; 重新编译内核编写测试用例Linux nice值范围 -20~1912345678910111213141516171819#include &lt;unistd.h&gt;#include &lt;syscall.h&gt;#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main(int argc, char *argv[])&#123; pid_t tid; int nicevalue,resualt; tid = getpid(); printf(&quot;pid = %d\n&quot;,tid); resualt = syscall(333,tid,0,0);//read printf(&quot;resualt = %ld\n&quot;,resualt); resualt = syscall(333,tid,1,1);//set printf(&quot;resualt = %ld\n&quot;,resualt); resualt = syscall(333,tid,0,0);//read printf(&quot;resualt = %ld\n&quot;,resualt); return 0;&#125; 编译1gcc -o mysetnice.out mysetnice.c 执行1./mysetnice.out 测试结果1sudo dmesg]]></content>
@@ -79,8 +91,8 @@
         <category>数据库</category>
       </categories>
       <tags>
-        <tag>mysql</tag>
         <tag>cmd</tag>
+        <tag>mysql</tag>
       </tags>
   </entry>
   <entry>
