@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-11-02T14:35:23.287Z</updated>
+  <updated>2018-03-07T06:15:21.530Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>简历</title>
+    <link href="http://yoursite.com/2018/03/06/%E7%AE%80%E5%8E%86/"/>
+    <id>http://yoursite.com/2018/03/06/简历/</id>
+    <published>2018-03-06T08:58:38.000Z</published>
+    <updated>2018-03-07T06:15:21.530Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="简历网址"><a href="#简历网址" class="headerlink" title="简历网址"></a><a href="http://www.500d.me/" target="_blank" rel="external">简历网址</a></h2><h2 id="简历信息"><a href="#简历信息" class="headerlink" title="简历信息"></a>简历信息</h2><h4 id="用户名-18100177484"><a href="#用户名-18100177484" class="headerlink" title="用户名 18100177484"></a>用户名 18100177484</h4><h4 id="密码-9a"><a href="#密码-9a" class="headerlink" title="密码 9a"></a>密码 9a</h4><h2 id="简历制作"><a href="#简历制作" class="headerlink" title="简历制作"></a>简历制作</h2><h4 id="怎么写简历中的自我评价？"><a href="#怎么写简历中的自我评价？" class="headerlink" title="怎么写简历中的自我评价？"></a><a href="https://www.zhihu.com/question/20632491" target="_blank" rel="external">怎么写简历中的自我评价？</a></h4>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;简历网址&quot;&gt;&lt;a href=&quot;#简历网址&quot; class=&quot;headerlink&quot; title=&quot;简历网址&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://www.500d.me/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;简历网址&lt;/a&gt;&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="简历" scheme="http://yoursite.com/categories/%E7%AE%80%E5%8E%86/"/>
+    
+    
+      <category term="简历" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8E%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux添加模块遇到的坑</title>
     <link href="http://yoursite.com/2017/11/02/Linux%E6%B7%BB%E5%8A%A0%E6%A8%A1%E5%9D%97%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91/"/>
     <id>http://yoursite.com/2017/11/02/Linux添加模块遇到的坑/</id>
     <published>2017-11-02T14:15:35.000Z</published>
-    <updated>2017-11-02T14:35:23.287Z</updated>
+    <updated>2017-11-02T14:35:23.286Z</updated>
     
     <content type="html"><![CDATA[<h2 id="传递参数问题"><a href="#传递参数问题" class="headerlink" title="传递参数问题"></a>传递参数问题</h2><p>虽然 pid_t 是 int ,但是写成这样会 make 不通过<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">static pid_t pid;</div><div class="line">//参数申明s</div><div class="line">module_param(pid,pid_t,0644); //参数说明</div></pre></td></tr></table></figure></p>
 <p>正确写法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">static pid_t pid;</div><div class="line">//参数申明s</div><div class="line">module_param(pid,int,0644); //参数说明</div></pre></td></tr></table></figure></p>
@@ -49,7 +71,7 @@
     <link href="http://yoursite.com/2017/11/01/linux-4-x%E6%B7%BB%E5%8A%A0%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/"/>
     <id>http://yoursite.com/2017/11/01/linux-4-x添加系统调用/</id>
     <published>2017-11-01T11:15:00.000Z</published>
-    <updated>2017-11-10T06:58:57.501Z</updated>
+    <updated>2017-11-10T06:58:57.500Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前提-Linux不同版本内核源码中的函数定义与引用查找网站"><a href="#前提-Linux不同版本内核源码中的函数定义与引用查找网站" class="headerlink" title="前提 Linux不同版本内核源码中的函数定义与引用查找网站"></a>前提 Linux不同版本内核源码中的函数定义与引用查找<a href="http://elixir.free-electrons.com/linux/v4.13.8/source" target="_blank" rel="external">网站</a></h2><h3 id="4-x内核添加系统调用"><a href="#4-x内核添加系统调用" class="headerlink" title="4.x内核添加系统调用"></a>4.x内核添加系统调用</h3><h4 id="到官方网站下载源码我下的是4-13-8"><a href="#到官方网站下载源码我下的是4-13-8" class="headerlink" title="到官方网站下载源码我下的是4.13.8"></a>到<a href="https://www.kernel.org/" target="_blank" rel="external">官方网站</a>下载源码我下的是4.13.8</h4><h4 id="解压压缩包"><a href="#解压压缩包" class="headerlink" title="解压压缩包"></a>解压压缩包</h4><h5 id="我们先切换到root用户-把下载好的内核压缩文件放到-usr-src下，然后进入这个目录"><a href="#我们先切换到root用户-把下载好的内核压缩文件放到-usr-src下，然后进入这个目录" class="headerlink" title="我们先切换到root用户,把下载好的内核压缩文件放到/usr/src下，然后进入这个目录"></a>我们先切换到root用户,把下载好的内核压缩文件放到/usr/src下，然后进入这个目录</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">xz -d linux-4.13.8.tar.xz</div><div class="line">tar -xvf linux-4.13.8.tar</div></pre></td></tr></table></figure>
 <h4 id="清除编译历史"><a href="#清除编译历史" class="headerlink" title="清除编译历史"></a>清除编译历史</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make mrproper</div></pre></td></tr></table></figure>
@@ -100,7 +122,7 @@
     <link href="http://yoursite.com/2017/11/01/linux%E6%90%AD%E5%BB%BAhexo/"/>
     <id>http://yoursite.com/2017/11/01/linux搭建hexo/</id>
     <published>2017-11-01T07:05:14.000Z</published>
-    <updated>2017-11-01T07:56:58.323Z</updated>
+    <updated>2017-11-01T07:56:58.322Z</updated>
     
     <content type="html"><![CDATA[<h3 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h3><ol>
 <li>去<a href="https://nodejs.org/en/" target="_blank" rel="external">官方网站</a>下载已经编译好的包</li>
@@ -150,7 +172,7 @@
     <link href="http://yoursite.com/2017/10/21/%E5%9C%A8windows%E4%B8%8B%E5%AE%89%E8%A3%85flex%E5%92%8Cbison/"/>
     <id>http://yoursite.com/2017/10/21/在windows下安装flex和bison/</id>
     <published>2017-10-21T13:29:29.000Z</published>
-    <updated>2017-10-22T12:20:00.346Z</updated>
+    <updated>2017-10-22T12:20:00.345Z</updated>
     
     <content type="html"><![CDATA[<h3 id="词法分析器"><a href="#词法分析器" class="headerlink" title="词法分析器"></a>词法分析器</h3><p>LEX是UNIX的工具，因此我们需要使用FLEX代替,使得在windows下使用；<br>配对：<br>LEX和YACC<br>FLEX和BISON<br>JFLEX和JavaCUP</p>
 <h3 id="下载得网址"><a href="#下载得网址" class="headerlink" title="下载得网址:"></a>下载得网址:</h3><p><a href="http://gnuwin32.sourceforge.net/packages/flex.htm" target="_blank" rel="external">flex</a><br><a href="http://gnuwin32.sourceforge.net/packages/bison.htm" target="_blank" rel="external">bison</a><br> 最偷懒得方法就是直接下载 Complete package, except sources<br>打开右键我得电脑→属性→內容→高级→环境变量→系统变量→path→编辑<br>加入;C:\Program Files(x86)\GnuWin32\bin;<br>cmd<br>键入<br>flex -V<br>bison -V<br>这样就能看到正确得信息就表示安装成功了！！</p>
@@ -185,7 +207,7 @@
     <link href="http://yoursite.com/2017/08/07/Android%E5%BC%80%E5%8F%91%E4%B9%8BAndroidAnnotations%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     <id>http://yoursite.com/2017/08/07/Android开发之AndroidAnnotations框架的使用/</id>
     <published>2017-08-07T03:18:57.000Z</published>
-    <updated>2017-08-07T07:55:43.049Z</updated>
+    <updated>2017-08-07T07:55:43.048Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Android开发之AndroidAnnotations框架的使用"><a href="#Android开发之AndroidAnnotations框架的使用" class="headerlink" title="Android开发之AndroidAnnotations框架的使用"></a><a href="http://blog.csdn.net/yubo_725/article/details/51206302" target="_blank" rel="external">Android开发之AndroidAnnotations框架的使用</a></h3><h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><ol>
 <li>Warning:Android-apt plugin is incompatible with future version of android Gradle plugin. Please use ‘annotationProcessor’ configuration instead.<br><a href="http://blog.csdn.net/pjingying/article/details/71975805?utm_source=itdadao&amp;utm_medium=referral" target="_blank" rel="external">解决</a></li>
@@ -212,7 +234,7 @@
     <link href="http://yoursite.com/2017/08/05/AndroidSDK-Support%E8%87%AA%E5%B8%A6%E5%A4%9C%E9%97%B4%E3%80%81%E6%97%A5%E9%97%B4%E6%A8%A1%E5%BC%8F%E5%88%87%E6%8D%A2%E8%AF%A6%E8%A7%A3/"/>
     <id>http://yoursite.com/2017/08/05/AndroidSDK-Support自带夜间、日间模式切换详解/</id>
     <published>2017-08-05T07:10:47.000Z</published>
-    <updated>2017-08-05T07:10:47.801Z</updated>
+    <updated>2017-08-05T07:10:47.800Z</updated>
     
     <summary type="html">
     
@@ -226,7 +248,7 @@
     <link href="http://yoursite.com/2017/08/02/Android-Studio%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/"/>
     <id>http://yoursite.com/2017/08/02/Android-Studio主题配置/</id>
     <published>2017-08-02T13:35:58.000Z</published>
-    <updated>2017-08-02T13:35:58.349Z</updated>
+    <updated>2017-08-02T13:35:58.348Z</updated>
     
     <summary type="html">
     
@@ -286,9 +308,9 @@
       <category term="数据库" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
-    
       <category term="cmd" scheme="http://yoursite.com/tags/cmd/"/>
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
     
   </entry>
   
@@ -297,7 +319,7 @@
     <link href="http://yoursite.com/2017/07/26/hexo-github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%B5%81%E7%A8%8B/"/>
     <id>http://yoursite.com/2017/07/26/hexo-github搭建博客流程/</id>
     <published>2017-07-26T13:19:58.000Z</published>
-    <updated>2017-07-26T13:34:53.938Z</updated>
+    <updated>2017-07-26T13:34:53.937Z</updated>
     
     <content type="html"><![CDATA[<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p><a href="http://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html" target="_blank" rel="external">小茗同学的博客园</a></p>
 <h2 id="NexT主题配置"><a href="#NexT主题配置" class="headerlink" title="NexT主题配置"></a>NexT主题配置</h2><p><a href="https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud" target="_blank" rel="external">为NexT主题添加文章阅读量统计功能</a></p>
