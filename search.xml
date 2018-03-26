@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[myeclipse]]></title>
+    <url>%2F2018%2F03%2F26%2Fmyeclipse%2F</url>
+    <content type="text"><![CDATA[myeclipse创建并运行web项目 展开WebRoot文件夹就可以看到有一个默认的index.jsp 选中启动 src/jdbc.properties 下 设置 jdbc.properties 中的 hibernate.show_sql=true 可以显示 hibernate生成的SQL语句]]></content>
+      <tags>
+        <tag>javaweb</tag>
+        <tag>myeclipse</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[VMware虚拟机]]></title>
     <url>%2F2018%2F03%2F25%2FVMware%E8%99%9A%E6%8B%9F%E6%9C%BA%2F</url>
     <content type="text"><![CDATA[VMware默认的虚拟机存放地点是我的文档→VMware Machine里面，在里面找到vdmx文件双击打开]]></content>
@@ -130,8 +139,8 @@
         <category>数据库</category>
       </categories>
       <tags>
-        <tag>cmd</tag>
         <tag>mysql</tag>
+        <tag>cmd</tag>
       </tags>
   </entry>
   <entry>
