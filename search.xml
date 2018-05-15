@@ -13,11 +13,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Tomcat配置]]></title>
-    <url>%2F2018%2F04%2F16%2FTomcat%E9%85%8D%E7%BD%AE%2F</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
     <title><![CDATA[myeclipse]]></title>
     <url>%2F2018%2F03%2F26%2Fmyeclipse%2F</url>
     <content type="text"><![CDATA[myeclipse创建并运行web项目 展开WebRoot文件夹就可以看到有一个默认的index.jsp 选中启动 src/jdbc.properties 下 设置 jdbc.properties 中的 hibernate.show_sql=true 可以显示 hibernate生成的SQL语句]]></content>
